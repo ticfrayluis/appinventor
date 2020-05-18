@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.6. Cuestionario | appinventor </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Antonio Salido" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">appinventor</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">App Inventor</a></li>
+   <li><a href="1_instalacin.html" class="no-ch">1. Instalación</a></li>
+   <li><a href="2_entorno.html" class="no-ch">2. Entorno</a></li>
+   <li class="current-page-parent"><a href="3_proyectos.html" class="current-page-parent daddy">3. Proyectos</a>
+   <ul>
+      <li><a href="31_reproducir_sonido.html" class="no-ch">3.1. Reproducir sonido</a></li>
+      <li><a href="32_xilfono.html" class="no-ch">3.2. Xilófono</a></li>
+      <li><a href="33_dibujar.html" class="no-ch">3.3. Dibujar</a></li>
+      <li><a href="34_adivinar_nmero.html" class="no-ch">3.4. Adivinar número</a></li>
+      <li><a href="35_atrapa_objetos.html" class="no-ch">3.5. Atrapa objetos</a></li>
+      <li id="active"><a href="36_cuestionario.html" class="active no-ch">3.6. Cuestionario</a></li>
+      <li><a href="37_traduvoz.html" class="no-ch">3.7. TraduVoz</a></li>
+      <li><a href="38_mapa_tour.html" class="no-ch">3.8. Mapa Tour</a></li>
+      <li><a href="39_app_turismo.html" class="no-ch">3.9. App turismo</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="35_atrapa_objetos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="37_traduvoz.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.6. Cuestionario</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_85" class="block iDevice_content">
+<p>En esta aplicación vamos a ver:</p>
+<ul>
+<li>Definición de variables de lista para el almacenamiento de las preguntas y respuestas en las listas.</li>
+<li>Secuenciación por una lista con un índice, cada vez que el usuario hace clic en Siguiente, aparecerá la siguiente pregunta.</li>
+<li>Uso de condicionales (if): realizar determinadas operaciones sólo bajo condiciones específicas. Vamos a utilizar un bloque if para manejar el comportamiento de la aplicación cuando el usuario llega al final de la prueba.</li>
+<li>Cambio de una imagen para mostrar una imagen diferente para cada pregunta del cuestionario.</li>
+</ul>
+<p>La aplicación tiene una interfaz sencilla para la visualización de la pregunta y para permitir al usuario contestar. </p>
+<p>Añadir los componentes enumerados en la tabla:</p>
+<table border="1" style="width: 620px;">
+<tbody>
+<tr>
+<td style="width: 133px;"><strong>Componente</strong></td>
+<td style="width: 116px;"><strong>Paleta</strong></td>
+<td style="width: 157px;"><strong>Nombre asignado</strong></td>
+<td style="width: 214px;"><strong>Objetivo</strong></td>
+</tr>
+<tr>
+<td style="width: 133px;">Imagen</td>
+<td style="width: 116px;">Interfaz de usuario</td>
+<td style="width: 157px;">Imagen1</td>
+<td style="width: 214px;">Imagen de la pregunta actual</td>
+</tr>
+<tr>
+<td style="width: 133px;">Etiqueta</td>
+<td style="width: 116px;">Interfaz de usuario</td>
+<td style="width: 157px;">EtPregunta</td>
+<td style="width: 214px;">La cadena de la pregunta</td>
+</tr>
+<tr>
+<td style="width: 133px;">Disposición Horizontal</td>
+<td style="width: 116px;">Disposición</td>
+<td style="width: 157px;">DisposiciónHorizontal1</td>
+<td style="width: 214px;">Distribución de la respuesta y el botón</td>
+</tr>
+<tr>
+<td style="width: 133px;">CampoDeTexto</td>
+<td style="width: 116px;">Interfaz de usuario</td>
+<td style="width: 157px;">CTRespuesta</td>
+<td style="width: 214px;">Donde se introduce la respuesta</td>
+</tr>
+<tr>
+<td style="width: 133px;">Botón</td>
+<td style="width: 116px;">Interfaz de usuario</td>
+<td style="width: 157px;">BRespuesta</td>
+<td style="width: 214px;">Botón para corregir</td>
+</tr>
+<tr>
+<td style="width: 133px;">
+<p>Disposición Horizontal</p>
+</td>
+<td style="width: 116px;">
+<p>Disposición</p>
+</td>
+<td style="width: 157px;">
+<p>DisposiciónHorizontal2</p>
+</td>
+<td style="width: 214px;">
+<p>Distribución de la respuesta y el botón</p>
+</td>
+</tr>
+<tr>
+<td style="width: 133px;">Etiqueta</td>
+<td style="width: 116px;">Interfaz de usuario</td>
+<td style="width: 157px;">EtCorregir</td>
+<td style="width: 214px;">Muestra Correcta o Incorrecta</td>
+</tr>
+<tr>
+<td style="width: 133px;">Botón</td>
+<td style="width: 116px;">Interfaz de usuario</td>
+<td style="width: 157px;">BSiguiente</td>
+<td style="width: 214px;">Pasa a la siguiente pregunta</td>
+</tr>
+<tr>
+<td style="width: 133px;">
+<p>Etiqueta</p>
+</td>
+<td style="width: 116px;">
+<p>Interfaz de usuario</p>
+</td>
+<td style="width: 157px;">
+<p>EtPunttos</p>
+</td>
+<td style="width: 214px;">
+<p>Muestra los puntos</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br />Establezca las propiedades de los componentes de la siguiente manera:</p>
+<ol>
+<li>Establecer Imagen1, que es la primera que debe aparecer. Establecer su ancho en "Ajustar al contenedor" y su altura a 200. Busca imágenes relacionadas con las preguntas.</li>
+<li>Establecer EtPregunta<span> </span><em>Texto</em><span> </span>en "Pregunta".</li>
+<li>Establecer CTRespuesta<span> </span><em>Pista</em><span> </span>a "Introduzca una respuesta". Establecer su propiedad<span> </span><em>Texto</em><span> </span>en blanco. Muévela a DisposiciónHorizontal1.</li>
+<li>Cambiar BRespuesta <em>Texto</em><span> </span>a "Enviar Respuesta", mover a DisposiciónHorizontal1.</li>
+<li>Cambiar BSiguiente<span> </span><em>Texto</em><span> </span>a "Siguiente", mover a DisposiciónHorizontal2.</li>
+<li>Cambiar EtCorregir<span> </span><em>Texto</em><span> </span>en blanco, mover a DisposiciónHorizontal2.</li>
+<li>Establecer EtPuntos <em>Texto </em><strong></strong>en "Puntos".</li>
+</ol>
+<p><img src="img16.png" /></p>
+<h2>Añadir comportamientos a los Componentes</h2>
+<p>Deberás programar los siguientes comportamientos:</p>
+<ul>
+<li>Cuando se inicia la aplicación, la pregunta aparece por primera vez, incluyendo su imagen correspondiente.</li>
+<li>Cuando el usuario hace clic en BSiguiente, la segunda pregunta aparece. Cuando se hace clic en él una vez más, la tercera cuestión aparece, y así sucesivamente.</li>
+<li>Cuando el usuario llega a la última pregunta y hace clic en BSiguiente, la primera pregunta debería aparecer de nuevo.</li>
+<li>Cuando el usuario responde a una pregunta, la aplicación le informará si es correcta o no.</li>
+</ul>
+<p>Para empezar, definiremos dos variables de lista sobre la base de los elementos enumerados a continuación:</p>
+<ul>
+<li><span><em>ListaPreguntas</em> que contenga la lista de preguntas</span></li>
+</ul>
+<ol>
+<li>¿Cuál es el lenguaje de programación más utilizado en el mundo?</li>
+<li>¿Qué sistema operativo es el más utilizado en España en dispositivos móviles?</li>
+<li>¿Qué nombre recibe Android 8.0?</li>
+</ol>
+<ul>
+<li> <span><em>ListaRespuestas</em> </span><span>para mantener la lista de respuestas correspondientes. </span></li>
+</ul>
+<ol>
+<li><span>Java</span></li>
+<li><span>Amdroid</span></li>
+<li><span>Oreo</span></li>
+</ol>
+<p>Primero creamos la variable y le agregamos el componente “<strong>construye una lista” </strong>del bloque “<strong>Listas</strong>”. A esta variable vamos añadiendo las preguntas.</p>
+<p>Lo mismo hacemos para lo variable ListaRespuestas.</p>
+<p><img src="img16.1.png" /></p>
+<p>Como puedes observar el componente “<strong>construye una lista” </strong>solo permite agregar dos elementos. Para añadir más elementos haz clic en la ruleta azul de configuración y arrastra el componente “elemento” a la lista según se muestra en la siguiente imagen.</p>
+<p><img src="img17.png" /></p>
+<p>Lo mismo hacemos para lo variable ListaRespuestas.  Para ahorrar trabajo puedes duplicar la variable creada y modificarla con los nuevos datos.</p>
+<p><img src="img9.png" /></p>
+<h3>Definición de la variable Index</h3>
+<p>La aplicación necesita para realizar un seguimiento de la cuestión actual que el usuario haga clic en BSiguiente para continuar con el cuestionario. Define una variable llamada PreguntaActual para ello, y la variable servirá como índice tanto a ListaPreguntas y ListaRespuestas. </p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img2.png" width="365" height="48" alt="" /><img src="img10.png" /></p>
+<h3>Viendo la primera pregunta</h3>
+<p>Al igual que con cualquier aplicación, es importante trabajar de forma incremental y definir un comportamiento cada vez. Para empezar, vamos a pensar sólo en la pregunta, específicamente, que se muestra en la lista cuando la aplicación se inicia. Volveremos para hacer frente a las imágenes un poco más tarde.<br />Vamos a hacer que los bloques de código trabajen con independencia de las cuestiones específicas que se encuentran en la lista. De este modo, si decide cambiar las preguntas o crear una nueva prueba copiando y modificando esta aplicación, sólo deberás cambiar las preguntas reales en las definiciones de lista.<br />El bloque nos pide que especifiquemos la lista y un índice (una posición en la lista). Si una lista tiene tres elementos, podemos introducir 1, 2, o 3, según el índice. Para este primer comportamiento, cuando la aplicación se inicia, queremos seleccionar el primer elemento de ListaPreguntas y poner en él EtPregunta.</p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img3.png" width="911" height="111" alt="" /><img src="img11.png" /></p>
+<h3>Iterar a través de las preguntas</h3>
+<p>Ahora programaremos el comportamiento de<span> </span><em>BSiguiente</em>. Primero debemos aumentar la variable<span> </span><em>PreguntaActual</em><span> </span>en 1. De esta forma al hacer clic vamos avanzando en la lista de preguntas. Además debemos poner en la<span> </span><em>EtPregunta</em><span> </span>el texto de la pregunta correspondiente. </p>
+<p><img src="img12.png" /></p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img4.png" width="910" height="149" alt="" />El problema de la aplicación es que simplemente se incrementa a la siguiente pregunta cada vez sin ningún tipo de preocupación sobre el final de la prueba. Cuando<span> </span><em>PreguntaActual</em><span> </span>ya es 3 y el usuario hace clic en el<span> </span><em>BSiguiente</em>, la aplicación cambia PreguntaActual de 3 a 4, pero el índice 4 no existe. Para solucionar este problema utilizaremos la función<span> </span><em>if. </em>De tal forma que si el índice es mayor de 3 nos llevará de nuevo a la primera pregunta. Con el fin de facilitar la programación y que el bloque funcione correctamente independientemente del número de preguntas que tengamos, vamos a utilizar el componente<span> </span><em>"longitud de la lista lista"</em><span> </span>del bloque<span> </span><em>Lista</em><span> </span>y el componente<span> </span><em>tomar</em><span> </span>del bloque<span> </span><em>Variables</em>.</p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img5.png" width="911" height="96" alt="" /><img src="img17.1.png" /></p>
+<h3>Cambio de la imagen para cada pregunta</h3>
+<p>Vamos a crear la variable ListaFotos para incluir las imágenes. Busca imágenes relacionadas con las preguntas y las subes al apartado <strong>Medios</strong> que se encuentra debajo de <strong>Componentes</strong>.</p>
+<p><strong>Nota: Al descargar las imágenes de internet suelen tener nombres muy largos y complejos. Renómbralas con nombres cortos sin caracteres especiales. Procura buscar imágenes de pequeño tamaño y con poco peso.</strong></p>
+<p><strong><img src="img18.1.png" /></strong></p>
+<p>Ahora que ya has programado todos los comportamientos para moverse a través de las preguntas, vamos a mostrar las imágenes para cada pregunta.. En este momento, la aplicación muestra la misma imagen independientemente de la pregunta que se está preguntando.<br />Puedes cambiar esto por una imagen correspondiente a cada pregunta que aparezca cuando el usuario hace clic en el<span> </span><em>BSiguiente</em>. Para ello modificar el controlador de eventos<span> </span><strong><em>BSiguiente.Click</em></strong><span>  </span>para cambiar la imagen cada vez que cambie el texto de la pregunta. <br /><em></em></p>
+<p><img src="img18.2.png" /></p>
+<h3>Comprobación de las respuestas del usuario</h3>
+<p>Así que ahora vamos a añadir bloques que informen de si el usuario ha respondido a una pregunta correctamente o no. Nuestra interfaz está configurada para que el usuario introduzca su respuesta en<span> </span><em>CTRespuesta</em><span> </span>y luego haga clic en<span> </span><em>BRespuesta</em>. La aplicación debe comparar la entrada del usuario con la respuesta a la pregunta actual utilizando un bloque<span> </span><em>ifelse</em>. La etiqueta EtCorregir entonces debe ser modificada para informar de si la respuesta es correcta o no. </p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img8.png" width="1160" height="267" alt="" /><img src="img14.png" /></p>
+<p>La aplicación debería funcionar, pero es posible que notes que cuando se hace clic en el BSiguiente, el "correcto" o "incorrecto" del texto y la respuesta anterior todavía están, aunque ya estás en la siguiente pregunta. Esto es bastante inofensivo, pero los usuarios<br />de la aplicación sin duda se darán cuenta de estos problemas de interfaz de usuario.<br />Para limpiar la EtCorregir y TBRespuesta, pondremos los bloques que eliminenel texto en el controlador de eventos BSiguiente.Click.</p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img9.png" width="0" height="0" alt="" /><img src="img15.png" width="411" height="76" alt="" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id16">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Actividad</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta16_48_2" class="block iDevice_content">
+<p>Mejorar la aplicación incluyendo al menos los siguientes cambios:</p>
+<ul>
+<li>Añadir 7 preguntas nuevas.</li>
+<li>Añade fotos relacionadas con las preguntas.</li>
+<li>En la EtPuntos debe aparecer el número de puntos obtenidos, teniendo en cuenta que cada acierto suma 1 punto y los fallos restan 1 punto.</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="35_atrapa_objetos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="37_traduvoz.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.4. Adivinar número | appinventor </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Antonio Salido" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">appinventor</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">App Inventor</a></li>
+   <li><a href="1_instalacin.html" class="no-ch">1. Instalación</a></li>
+   <li><a href="2_entorno.html" class="no-ch">2. Entorno</a></li>
+   <li class="current-page-parent"><a href="3_proyectos.html" class="current-page-parent daddy">3. Proyectos</a>
+   <ul>
+      <li><a href="31_reproducir_sonido.html" class="no-ch">3.1. Reproducir sonido</a></li>
+      <li><a href="32_xilfono.html" class="no-ch">3.2. Xilófono</a></li>
+      <li><a href="33_dibujar.html" class="no-ch">3.3. Dibujar</a></li>
+      <li id="active"><a href="34_adivinar_nmero.html" class="active no-ch">3.4. Adivinar número</a></li>
+      <li><a href="35_atrapa_objetos.html" class="no-ch">3.5. Atrapa objetos</a></li>
+      <li><a href="36_cuestionario.html" class="no-ch">3.6. Cuestionario</a></li>
+      <li><a href="37_traduvoz.html" class="no-ch">3.7. TraduVoz</a></li>
+      <li><a href="38_mapa_tour.html" class="no-ch">3.8. Mapa Tour</a></li>
+      <li><a href="39_app_turismo.html" class="no-ch">3.9. App turismo</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="33_dibujar.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="35_atrapa_objetos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.4. Adivinar número</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_85" class="block iDevice_content">
+<p>Vamos a hacer un programa sencillo pero eficiente. Él pensará un número y nosotros tenemos que adivinarlo.</p>
+<p>Tenemos que crear un interfaz para para que la aplicación se relacione con el usuario, es decir, le pregunte un número, y le vaya dando pistas, diciendo si es demasiado alto, demasiado bajo, o si finalmente ha acertado el número secreto.</p>
+<p>1. Creamos en el Diseñador una E<em><strong>tiqueta</strong></em>, y cambiamos el texto para que aparezca en ella la palabra “<em><strong>Número</strong></em>”. Llamaré a la etiqueta<span> </span><em><strong>E_número</strong></em><span> </span>.</p>
+<p>2. Añadiremos en nuestra ventana del visor un<span> </span><em><strong>CampoDeTexto</strong></em>. Servirá para que el jugador indique qué número cree que ha pensado el programa, le llamaremos<span> </span><em><strong>T_número</strong></em>.</p>
+<p>3. Finalmente tendremos que añadir un <em><strong>B</strong><strong>otón</strong><span> </span></em>con el texto “<em><strong>Adivina</strong></em>” para que el dispositivo sepa cuál hemos elegido. A este botón lo llamaremos<span> </span><em><strong>B _adivinar</strong></em>.</p>
+<p><img src="adivinar1.jpg" width="595" height="227" /></p>
+<h3>Generamos un número aleatorio</h3>
+<p>Lo primero que el programa tiene que hacer es pensar en un número. En este caso le vamos a indicar cómo debe pensar en un número entre 1 y 10. Al ser una instrucción matemática, abriremos el cajón<span> </span><em><strong>Matemáticas</strong><span> </span></em>, y usaremos el bloque<span> </span><em><strong>entero aleatorio entre</strong></em><span> </span>. Tendremos que especificarle entre qué dos números debe pensar su número.</p>
+<p><img src="adivinar2.jpg" width="302" height="51" /></p>
+<h3>Guardamos el número en una variable</h3>
+<p>A continuación vamos a hacer que el programa guarde este número en su memoria, porque si no lo olvidaría y no podríamos jugar.</p>
+<p>Para ello abrimos el cajón<span> </span><em><strong>Variables</strong><span> </span></em>y elegimos el bloque<span> </span><em><strong>inicializar global … como</strong></em>. Podemos darle a la variable el nombre</p>
+<p><img src="adivinar3.jpg" width="604" height="47" /></p>
+<h3>Pedimos un número al jugador. </h3>
+<p>Para comenzar a jugar deberíamos pedirle al jugador que nos diga un número. Esto lo conseguiremos por medio del campo de texto<span> </span><em><strong>T _número</strong></em><span> </span>que hemos creado en el Visor. El jugador irá escribiendo números en este campo y el programa le irá indicando si el número aleatorio generado secretamente es mayor o menor al que el jugador ha escrito.<br />Por lo tanto, cada vez que el jugador escriba su número y pulse el botón<span> </span><em>B _adivinar</em><span> </span>el programa lo comparará con el número secreto.</p>
+<h3>Hacemos comparaciones con la instrucción si-entonces</h3>
+<p>Seleccionamos el bloque<strong><span> </span>si entonces</strong><span> </span>del apartado<span> </span><em><strong>Control</strong><span> </span></em>y encajamos el bloque para hacer comparaciones del apartado<span> </span><em><strong>Matemáticas. </strong></em></p>
+<p>En el primer hueco del bloque azul pondremos el número secreto que almacenamos antes en la variable, y en el otro lado indicaremos cuál es el número que ha escrito el jugador en el campo<span> </span><em><strong>T _número</strong></em>.</p>
+<p><img src="adivinar4.jpg" width="812" height="164" /></p>
+<p>Ahora que ya sabemos cómo consultar cuál es contenido de la variable<em><strong> V_numero_pensado</strong></em>, podemos modificar la comparación haciendo clic en el centro del bloque azul. Empezaremos evaluando si el número pensado es mayor que el número del jugador.</p>
+<p>En caso de que se cumpla la condición deberemos darle al jugador una pista, diciéndole que el número que nos ha dicho es demasiado bajo. Lo haremos creando una nueva etiqueta<span> </span><em><strong>E_pista</strong><span> </span></em>en el interfaz del juego.</p>
+<p>Para guardar el valor de una variable, texto o etiqueta, necesitamos el bloque<span> </span><em><strong>poner.<span> </span></strong></em>Vamos a asignar el valor “<em>Demasiado bajo</em>” al texto de la etiqueta<span> </span><em><strong>E _pista</strong></em>, para que el jugador lo vea en la pantalla del juego.  Para incluir el texto “<em>Demasiado bajo</em>” usaremos el bloque<span> </span><em><strong>" "</strong></em><span> </span>que hay dentro del cajón<span> </span><em><strong>Texto</strong><span> </span></em>.</p>
+<p><img src="adivinar5.jpg" width="632" height="92" /></p>
+<p>¿Cuándo debemos hacer la comparación? Cada vez que el usuario haga clic en el botón <em><strong>B_adivinar</strong></em>. Por lo tanto, incluiremos todo el bloque anterior dentro del bloque <em><strong>cuando.B_adivinar.Clic</strong></em></p>
+<p><em><strong><img src="adivinar6.jpg" width="701" height="127" /></strong></em></p>
+<p>Pero esto sólo dará la pista al jugador cuando su número sea menor al pensado, así que habrá que hacer tres bloques<span> </span><em><strong>si entonces</strong></em>, uno para cuando el número sea menor, otro para cuando sea mayor, y el último para cuando sea igual, en cuyo caso el jugador habrá acertado el número.</p>
+<p>En nuestro programa, para evitar las ejecuciones de código innecesarias, vamos a utilizar sentencias<span> </span><em><strong>si entonces anidadas</strong></em>, o<span> </span><em><strong>si entonces si no</strong></em>. Sólo se ejecutarán los bloques del si no cuando <strong>NO</strong> se cumpla la condición del<span> </span><em><strong>si entonces</strong><span> </span></em>anterior. Para ello haz clic en el botón azul <span>del bloque </span><em><strong>cuando.B_adivinar.Clic,<span> </span></strong></em>selecciona la opción<span> </span><em><strong>si no, si</strong></em><span> </span>y la arrastras al bloque<span> </span><em><strong>si</strong><span> </span></em>de la derecha, repite la operación para colocar otro<span> </span><em><strong>si no, si</strong></em></p>
+<p><img src="adivinar7.jpg" width="295" height="190" /></p>
+<p><img src="adivinar8.jpg" width="698" height="258" /></p>
+<h3>Uso de un reloj para calcular el tiempo</h3>
+<p>Un componente muy útil para controlar y gestionar la ejecución de los programas es el temporizador, o reloj. Gracias a este componente podemos definir cuándo suceden cosas, independientemente de lo que haga el usuario de la aplicación. O podemos controlar el tiempo que duran los procesos que se están ejecutando, por ejemplo. </p>
+<p>En este caso lo utilizaremos para limitar el tiempo de que dispone el usuario para adivinar el número pensado. Cuando el tiempo se cumpla, el usuario no podrá seguir intentando adivinar el número. </p>
+<p>Empezamos añadiendo desde la Paleta al Visor un componente del tipo<span> </span><em><strong>Reloj,<span> </span></strong></em>que se encuentra en el apartado<em><strong><span> </span>Sensores</strong></em>. Como el reloj es un componente no visible, aparecerá fuera de la zona visible del Visor. Lo llamaremos<span> </span><em><strong>Temporizador</strong><span> </span></em>.</p>
+<p>Una de las propiedades más importantes del reloj es<span> </span><em><strong>IntervaloDelTemporizador</strong><span> </span></em>, que controla cada cuánto tiempo se “dispara” el reloj. Se expresa en milisegundos, y su valor inicial es 1000, o lo que es lo mismo, un segundo. Esto significa que cada segundo el reloj dirá “¡Ha pasado una unidad de tiempo!”. Si cambiamos su valor por 500, por ejemplo, el reloj avisará cada medio segundo. Si ponemos 60000, entonces nos avisará cada minuto.</p>
+<p>Par poder visualizar los segundos en la aplicación vamos a incorporar una etiqueta que llamaremos <strong>E_Tiempo</strong>. Al comenzar el juego vamos a asignar un valor de 30 a esta etiqueta, de tal forma que disponemos de 30 segundos para adivinar el número.</p>
+<p><img src="img9.1.png" /></p>
+<p>Para saber cuándo se cumplen los treinta segundos usaremos el bloque mostaza <em><strong>cuando Temporizador.Temporizador ejecutar</strong></em>, que se encuentra dentro del cajón del reloj, en el editor de bloques. Todo lo que queramos que suceda cuando se cumplan los treinta segundos habrá que ponerlo dentro de este bloque.</p>
+<p>El temporizador comenzará a funcionar si el valor de la etiqueta <strong>E_Tiempo</strong> es distinto de 0, en cuyo caso iremos restando 1 segundo, hasta llegar a 0 que aparecerá un mensaje avisándonos que hemos acabo el juego</p>
+<p><img src="img8.1.png" width="720" height="178" alt="" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id9">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Actividad</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta9_41_2" class="block iDevice_content">
+<ul>
+<li>Mejorar la interfaz de usuario, personaliza los botones, pon una imagen de fondo.</li>
+<li>Poner un botón para empezar de nuevo el juego. Ten en cuenta que aquí debes poner la variable con sus valor original, la E_Tiempo con valor 30 y las etiquetas del Número y Pista deben aparecer en blanco, sin texto. <img src="img0.1.png" width="70" height="33" alt="" /></li>
+<li>Hacer que el jugador sólo disponga de tres intentos para adivinar el número. Para ello debes crear una variable nueva con valor de inicio 0. En el bloque<strong> cuando B_Adivinar clic</strong> comprobaremos si se cumple la condición<img src="img1.2.png" width="326" height="47" alt="" />, si se cumple podemos jugar y si no se cumple en la etiqueta Pista aparecerá el texto "Has agotado los intentos". Esto se lo indicamos  con la sentencia <strong>si entonces, sino.</strong></li>
+</ul>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33_dibujar.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="35_atrapa_objetos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

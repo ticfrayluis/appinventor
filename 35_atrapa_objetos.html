@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.5. Atrapa objetos | appinventor </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Antonio Salido" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">appinventor</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">App Inventor</a></li>
+   <li><a href="1_instalacin.html" class="no-ch">1. Instalación</a></li>
+   <li><a href="2_entorno.html" class="no-ch">2. Entorno</a></li>
+   <li class="current-page-parent"><a href="3_proyectos.html" class="current-page-parent daddy">3. Proyectos</a>
+   <ul>
+      <li><a href="31_reproducir_sonido.html" class="no-ch">3.1. Reproducir sonido</a></li>
+      <li><a href="32_xilfono.html" class="no-ch">3.2. Xilófono</a></li>
+      <li><a href="33_dibujar.html" class="no-ch">3.3. Dibujar</a></li>
+      <li><a href="34_adivinar_nmero.html" class="no-ch">3.4. Adivinar número</a></li>
+      <li id="active"><a href="35_atrapa_objetos.html" class="active no-ch">3.5. Atrapa objetos</a></li>
+      <li><a href="36_cuestionario.html" class="no-ch">3.6. Cuestionario</a></li>
+      <li><a href="37_traduvoz.html" class="no-ch">3.7. TraduVoz</a></li>
+      <li><a href="38_mapa_tour.html" class="no-ch">3.8. Mapa Tour</a></li>
+      <li><a href="39_app_turismo.html" class="no-ch">3.9. App turismo</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="34_adivinar_nmero.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="36_cuestionario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.5. Atrapa objetos</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id10">
+<div class="iDevice emphasis0">
+<div id="ta10_85" class="block iDevice_content">
+<p>Vamos a programar un nuevo juego un poco más sofisticado, para seguir aprendiendo conceptos y componentes. Se trata de conducir una pelota a través de un escenario de juego para ir atrapando objetos. Habrá que gestionar el movimiento de la pelota, la ubicación de los objetos, el marcador, la duración del juego, etc.</p>
+<h3>Diseño de los componentes</h3>
+<p>Vamos a utilizar estos componentes para hacer la aplicación:</p>
+<ul>
+<li>Un componente <strong>Lienzo</strong> que se encuentra en <strong><em>Dibujo y animación </em></strong></li>
+<li>Un componente <strong><em>Pelota</em></strong> que se encuentra en <strong><em>Dibujo y animación </em></strong><strong>y que colocaremos dentro del</strong><strong> Lienzo.</strong></li>
+<li><strong>5 </strong>componentes <strong><em>SpriteImagen</em></strong> que se encuentra en <strong><em>Dibujo y animación </em></strong><strong>y que colocaremos dentro del</strong><strong> Lienzo. </strong>Estos los renombraremos como<strong> Sprite_zombi_1, Sprite_zombi_2, </strong>etc.</li>
+<li>Un componente  botón para reiniciar el juego.</li>
+<li>Un componente <strong><em>Etiqueta</em></strong>, que llamaremos <strong><em>E_tiempo</em></strong>, a la derecha del botón <strong><em>Reiniciar</em></strong>,</li>
+<li>Un componente <strong><em>DisposiciónHorizontal </em></strong>y un componente <strong><em>DisposiciónVerticla </em></strong>para el botón y la etiqueta.</li>
+<li>Un componente <strong><em>Acelerómetro, </em></strong>dentro del apartado<strong> <em>Sensores</em></strong>. Lo llamaremos <strong><em>Inclinación</em></strong>.</li>
+<li>Un componente <strong><em>Reloj, </em></strong>dentro del apartado<strong> <em>Sensores</em></strong>. Lo llamaremos <strong><em>Tiempo</em></strong>.</li>
+<li>Un componente <strong><em>SensorDeOrientación, </em></strong>dentro del apartado<strong> <em>Sensores</em></strong>. Estos tres últimos componentes no son visibles, así que aparecerá en la parte inferior del Visor, en la zona destinada a componentes no visibles.</li>
+</ul>
+<p><img src="img22.1.png" /></p>
+<h2>Configurar el escenario de juego</h2>
+<p>De momento indicaremos en el <em>Diseñador</em> que la altura y la anchura del <strong>Lienzo</strong> se ajusten automáticamente al contenedor.</p>
+<p>En cuanto a las propiedades de la <strong>Pelota</strong>, definiremos que su <strong><em>Radio</em></strong><em> </em>es 15, para que se vea suficientemente grande en el escenario. El color configurarlo en función de la imagen que pongáis de fondo del escenario.</p>
+<p>Para que el <strong>Lienzo</strong> siempre ocupe todo el espacio de la pantalla del dispositivo debemos definir algunos bloques dentro del bloque mostaza<br /><strong><em>cuando.Screen1.Inicializar</em></strong>. Todo lo que incluyamos en este bloque se ejecutará en cuanto se abra la pantalla, es decir, en este caso será lo primero que suceda cuando se ejecute la aplicación.</p>
+<p>Tenemos que adaptar el escenario a los límites de la pantalla, tomando las propiedades de ancho y largo de la pantalla de cada dispositivo. Además, evitaremos que la pantalla rote automáticamente poniendo el valor de la propiedad <strong><em>OrientaciónDeLaPantalla</em></strong><em> </em><strong><em>como</em></strong><em> </em>1. Con este valor la pantalla siempre mantendrá la orientación vertical, aunque inclinemos el dispositivo. No obstante, como esto no funciona con todos los dispositivos, en algunos casos será necesario desactivar manualmente la rotación de la pantalla en el propio dispositivo.</p>
+<p>En nuestro caso hemos reducido la altura del escenario en 150 unidades, para dar espacio suficiente a otros objetos que añadiremos más adelante.</p>
+<p><img src="atrapa01.jpg" width="604" height="136" /></p>
+<h3>El movimiento de la pelota</h3>
+<p>Para que la pelota ruede por el escenario tendremos que inclinar el dispositivo. La pelota rodará siempre hacia la parte del escenario que se encuentre más cerca del suelo. Para ello vamos a utilizar los datos que nos proporciona el componente <strong><em>Acelerómetro </em></strong> (recordar que le hemos cambiado el nombre por Inclinación) </p>
+<p>Ahora utilizaremos el bloque del componente Inclinación<strong><em> cuando Inclinación CambioEnAceleración</em></strong> para mover la pelota. Este bloque incluye tres variables, cada una de las cuales almacena la inclinación del objeto en uno de los ejes de coordenadas. Vamos a hacer que la pelota tenga una dirección dependiendo de los valores de estas tres variables.</p>
+<p>Para conocer la aceleración en el eje X, tenemos que dejar el puntero del ratón inmóvil durante un segundo sobre el campo <strong><em>xAccel</em></strong><em> </em>color naranja que hay dentro del bloque mostaza. Una vez aparezcan las opciones <strong><em>tomar</em></strong><em>  </em>y <strong><em>poner</em></strong> para esa variable, podremos arrastrar el bloque <strong><em>tomar</em></strong><em> </em>hasta su lugar. Lo mismo hacemos para <strong><em>yAccel</em></strong><em> </em></p>
+<p>El bloque <strong>llamar Pelota MoverA</strong>  se encuentra en los bloques del componente Pelota.</p>
+<p><img src="img23.1.png" /></p>
+<p>Es buen momento para experimentar qué sucede con cada una de las variables cuando inclinamos el dispositivo. Podemos invertir un poco de tiempo probando, hasta que entendamos cómo afecta la inclinación a cada una de estas variables. Veremos que para la Y los valores comprenderán de -10 (cuando el dispositivo está vertical y apuntando hacia el suelo) a 10 (cuando el dispositivo está vertical, y hacia arriba). Para la X, los valores comprenderán también entre 10 (cuando está completamente inclinado con la pantalla hacia la izquierda) y -10 cuando está completamente inclinado con la pantalla hacia la derecha).</p>
+<p>En cuanto a la Z, inicialmente sin uso en este juego, irá de 10 (cuando el dispositivo tiene la pantalla hacia arriba) a -10 (cuando el dispositivo tenga la pantalla hacia abajo, paralela al suelo).</p>
+<p>Cuando hagamos esto veremos que el comportamiento vertical, el de la coordenada<strong><span> </span>Y</strong>, será el esperado, es decir, que la pelota caerá hacia nosotros cuando inclinemos el dispositivo hacia nuestro lado, y se alejará de nosotros cuando inclinemos el móvil en la dirección contraria. Sin embargo, cuando inclinemos el dispositivo hacia la derecha, en el eje<span> </span><strong>X</strong>, la pelota caerá hacia la izquierda, y viceversa. Para solucionar este problema, y adaptar el funcionamiento al comportamiento natural de una pelota, tendremos que modificar el bloque que indica el posicionamiento en la componente<span> </span><strong>X </strong>de la coordenada. En lugar de sumarle el valor de<span> </span><em><strong>xAccel </strong><span> </span></em>le sumaremos el valor de restar<span> </span><strong>xAccel</strong><span> </span>a 1.</p>
+<h3>Crear los objetos a atrapar</h3>
+<p>A continuación hay que crear cada Sprite que vaya a aparecer en el escenario. La imagen para el Sprite la podéis buscar en <span><a href="http://www.iconarchive.com/" target="_blank" rel="noopener">http://www.iconarchive.com/</a></span>. Si ponéis la palabra <strong><em>zombie</em></strong> en el buscador os aparecen diversas imágenes, podéis elegir la misma imagen para los 5 Sprite o una imagen distinta para cada sprite. Seleccionar la opción de 32 pixel, se abrirá una ventana nueva con la imagen, hacéis clic en el botón de la derecha y seleccionar la opción <strong><em>Guardar como</em></strong>. Asegurarse de que se guarda en formato <strong>.png</strong></p>
+<p><strong><img src="img18.png" /></strong></p>
+<p style="background: white; margin: 12.0pt 0cm 12.0pt 0cm;"><span style="font-size: 12.5pt; font-family: 'Arial',sans-serif; color: #333333;">Desde la ventana del Diseñador, subimos las imágenes para cada Sprite_zombi<o:p></o:p></span></p>
+<p style="background: white; margin: 12.0pt 0cm 12.0pt 0cm;"><img src="img22.3.png" /></p>
+<h3>Posición de los zombis</h3>
+<p>Una vez creados los cinco objetos tenemos que colocarlos en el escenario. Lo haremos con el bloque<span> </span><em><strong>llamar.Sprite_zombi_1.MoverA.</strong></em><span> </span>Especificaremos para cada objeto una posición aleatoria. Con los bloques azules<em><strong><span> </span>entero aleatorio entre</strong></em><span> </span>definiremos en qué coordenada<span> </span><em><strong>X</strong><span> </span></em>aparecerá la esquina superior del sprite dentro del escenario. Especificaremos un 0 para indicar que el objeto puede aparecer desde el margen izquierdo del escenario. A continuación le diremos con el bloque verde <em><strong>Escenario.Ancho</strong></em><span> </span>que el límite máximo es el límite derecho del escenario. Pero, atención, si el bloque azul entero<span> </span><em><strong>aleatorio.entre</strong><span> </span></em>nos devolviera precisamente un valor de<span> </span><strong>X</strong><span> </span>muy cercano al límite derecho la mayor parte del enemigo sobrepasaría el límite derecho del escenario, y no sería visible. Para solucionar esto se resta a <em><strong>Escenario.Ancho</strong></em><span> </span>el ancho del sprite del enemigo,<span> </span><em><strong>Sprite_zombi_1.Ancho.</strong></em></p>
+<p>Haremos lo mismo con la coordenada vertical<span> </span><strong>Y</strong>, y repetiremos los mismos bloques cinco veces, porque hay cinco objetos iguales.</p>
+<p>Cada vez que el juego se reinicie tendremos que colocar los objetos en el escenario, y deberemos volver a usar todos estos bloques, así que lo mejor, para no tener que escribir el mismo código varias veces cuando es tan grande, será definir un procedimiento, donde incluiremos todos los bloques que sirven para colocar los objetos. El bloque para definir procedimientos se encuentra dentro del cajón<span> </span><em><strong>Procedimientos</strong></em>.</p>
+<p><img src="atrapa07.jpg" width="831" height="514" /></p>
+<h3>Movimiento de los zombis</h3>
+<p>Una vez colocados los sprite al azar tenemos que hacer que se muevan también aleatoriamente. Para ello vamos a crear otro procedimiento llamado <strong>moverZombi</strong>:</p>
+<p><img src="img22.4.png" /></p>
+<p style="background: white; margin: 12.0pt 0cm 12.0pt 0cm;">De esta manera cada sprite tendrá una dirección aleatoria y una velocidad determinada. Podéis cambiar los valores de la velocidad para que unos se muevan más rápidos que otros.</p>
+<h3>Implementar la mecánica del juego</h3>
+<p>El jugador deberá inclinar el dispositivo para guiar a la pelota hacia cada uno de los objetos y chocar con ellos. Cada vez que eso suceda deberemos retirar el objeto del escenario. El juego acabará cuando el jugador haya hecho desaparecer todos los objetos.</p>
+<p>Para saber cuándo la pelota choca con un objeto utilizaremos el bloque<span> </span><em><strong>cuando.spritePelota.EnColisiónCon otro ejecutar</strong></em>. Este bloque está dentro del cajón de recursos relacionados con el objeto<span> </span><em><strong>spritePelota</strong><span> </span></em>.</p>
+<p><img src="img20.png" /></p>
+<p>Ahora vamos a utilizar un nuevo tipo de recurso, un bloque que no habíamos usado todavía. Este bloque se encuentra dentro del cajón<span> </span><em><strong>Cualquiercomponente / </strong></em><em><strong>CualquierSpriteImagen</strong></em>. La diferencia entre este cajón y los que hemos abierto antes es que los bloques contenidos aquí nos permitirán definir acciones que harán referencia a diferentes objetos del mismo tipo. En este caso hará referencia a objetos del tipo<span> </span><em><strong>SpriteImagen</strong><span> </span></em>, como son nuestros cinco “zombis”.</p>
+<p><img src="img22.6.png" /></p>
+<p>Para no tener que repetir el código para cada objeto, usaremos el bloque genérico<span> </span><em><strong>poner SpriteImagen.Visible del componente como</strong></em>. Este bloque nos permitirá cambian el valor de la propiedad<span> </span><em><strong>Visible</strong></em> de cualquier componente del tipo<span> </span><em><strong>SpriteImagen</strong></em>, que especificaremos en el hueco del componente .</p>
+<p>Usaremos el parámetro<span> </span><strong>otro</strong><span> </span>del bloque mostaza que hemos añadido antes para indicar a qué objeto concreto queremos referirnos "<em><strong>tomar otro</strong></em>", y estableceremos a<span> </span><em><strong>falso</strong><span> </span></em>el valor de la propiedad<span> </span><em><strong>Visible</strong><span> </span></em>del objeto, para que desaparezca del escenario.</p>
+<p><img src="img22.5.png" /></p>
+<h3>Gestión del marcador</h3>
+<p>Tenemos también que mantener un contador de objetos restantes, para saber cuándo se han recogido todos y dar por completada la misión. Para ello usaremos dos variables,<span> </span><em><strong>v_objetos_totales</strong></em>, y<span> </span><em><strong>v_objetos_restantes</strong></em>. La primera define el número de objetos que vamos a manejar en cada partida, y la segunda define el número de objetos que quedan por hacer desaparecer. Como siempre, par indicar que estamos definiendo una variable, y que luego sea más fácil identificarla como tal, comenzaremos los nombres con el prefijo<span> </span><strong>v_</strong><span> </span>.</p>
+<p><img src="atrapa10.jpg" width="340" height="70" /></p>
+<p>Cada vez que la pelota choque con un objeto, tendremos que restar 1 al número de objetos restantes. Cuando la variable<span> </span><em><strong>v _objetos_restantes</strong></em><span> </span>sea 0 , significará que el jugador ha recogido todos los objetos, y el juego habrá terminado.</p>
+<p><img src="atrapa11.jpg" width="637" height="169" /></p>
+<h3>Reorganizando los bloques de código</h3>
+<p>Cuando una aplicación está empezando a crecer, como la nuestra, conviene mirarla un poco “desde lejos” y pensar de qué manera podemos hacer que sea más fácil de manejar, cómo organizarla mejor. Así pues, para facilitar el mantenimiento de nuestro programa, y su lectura, vamos a definir dos procedimientos:<span> </span><em><strong>Iniciar_juego</strong><span> </span></em>y <em><strong>Fin_juego</strong></em>. Para ellos abriremos el cajón<span> </span><em><strong>Procedimiento</strong><span> </span></em>y arrastraremos dos veces el bloque como procedimiento ejecutar.</p>
+<p>En el primero de ellos tendremos que reubicar los objetos, y reiniciar todas las variables que tiene que manejar el juego. Es decir, dejar las cosas listas para empezar a jugar.</p>
+<p><img src="img22.7.png" /></p>
+<p>Habrá que hacer una llamada al procedimiento<span> </span><em><strong>Iniciar_juego</strong></em><span> </span>dentro del bloque<span> </span><em><strong>cuando Screen1.Inicializar ejecutar</strong></em><span> </span>, que ahora quedará así.</p>
+<p><img src="atrapa13.jpg" width="544" height="146" /></p>
+<p>El procedimiento <strong>Fin_juego</strong> lo veremos más adelante.</p>
+<p><img src="img22.2.png" /></p>
+<h3>Limitar el tiempo para crear tensión</h3>
+<p>Para dar mayor interés al juego usaremos un temporizador, un componente<span> </span><strong>Reloj</strong>, que limitará el tiempo que tiene el jugador para aplastar a los enemigos. Cuando el tiempo termine, el jugador no podrá eliminar más objetos. Le daremos el nombre Tiempo. Se pretende conocer cuándo pasa cada segundo, así que su propiedad <em><strong>IntervaloDelTemporizador</strong></em><span> </span>contendrá el valor 1000.</p>
+<p>La idea es mostrar siempre en la pantalla el número de segundos restantes, y para eso necesitamos restar un segundo cada vez respecto de la cantidad que queda disponible. Así pues, definiremos el número de segundos disponibles con la variable <em><strong>v_segundos_restantes</strong></em><span> </span>, y le daremos el valor inicial 30. </p>
+<p>En el bloque<span> </span><em><strong>cuando.Tiempo.Temporizador ejecutar</strong></em><span> </span>indicaremos que reste 1 a la variable<span> </span><em><strong>v _segundos_restantes</strong></em>, y que lo muestre en un nuevo objeto de tipo <em><strong>Etiqueta</strong><span> </span></em>que llamaremos<span> </span><em><strong>E_tiempo</strong></em>.</p>
+<p><img src="atrapa14.jpg" width="658" height="100" /></p>
+<h3>¿Cuándo termina el juego?</h3>
+<p>Cuando la variable<span> </span><em><strong>v _segundos_restantes</strong></em><span> </span>alcance el valor 0 (cero) la partida habrá terminado, porque ya no habrá segundos restantes. Podemos implementar esta comprobación añadiendo un bloque mostaza<span> </span><em><strong>si entonces</strong></em><span> </span>dentro del bloque <strong>cuando.Tiempo.Temporizador ejecutar</strong>. Cuando se cumpla la condición del <em><strong>si entonces</strong></em><span> </span>habrá llegado el momento de hacer una llamada al procedimiento <em><strong>Fin_juego</strong></em>.</p>
+<p><img src="atrapa15.jpg" width="660" height="171" /></p>
+<p>El juego también deberá terminar cuando no queden más objetos por recoger. Lo indicaremos con un bloque<span> </span><em><strong>si entonces</strong></em><span> </span>dentro del bloque<span> </span><em><strong>cuando.spritePelota.EnColisiónCon.ejecutar.</strong></em></p>
+<p><em><strong><img src="atrapa16.jpg" width="635" height="237" /></strong></em></p>
+<h3>Fin del juego</h3>
+<p>Tenemos entonces que definir qué hacer cuando el juego termine. Una opción sencilla y clara puede ser informar al usuario a través de un texto, y tal vez un sonido. Por ejemplo, podemos escribir el texto “<em><strong>Fin del juego</strong></em>” en la etiqueta <em><strong>E_tiempo</strong></em>. Para ello abriremos el cajón Texto del editor de bloques, y arrastraremos el componente de texto vacío al hueco verde que asigna un valor al texto de la etiqueta<span> </span><em><strong>E_tiempo</strong></em>.</p>
+<p><img src="atrapa17.jpg" width="440" height="67" /></p>
+<p>Extrañamente, ese texto no aparece por mucho tiempo en la pantalla. ¿Por qué?<br />Si ponemos mucha atención veremos que el texto aparece, pero sólo durante un segundo. Esto se debe a que el programa comprueba en el bloque <em><strong>cuando.Tiempo.Temporizador ejecutar</strong></em><span> </span>si la variable Segundos_totales vale 0, pero esto sólo se cumple durante un segundo, porque el tiempo sigue contando, así que rápidamente el valor de<span> </span><em><strong>v_tiempo</strong></em><span> </span>pasa a ser - 1, que es el valor que se obtiene cuando a 0 le restamos 1. El programa sigue ejecutándose, y en la siguiente ejecución del bloque<span> </span><em><strong>cuando.Tiempo.Temporizador ejecutar</strong><span> </span></em>volverá a escribir el valor del contador de segundos encima del texto.</p>
+<p>Para evitar esto tenemos que hacer que el bloque<em><strong><span> </span>cuando.Tiempo.Temporizador ejecutar</strong><span> </span></em>deje de ejecutarse. Esto se consigue dándole el valor<span> </span><em><strong>falso</strong><span> </span></em>a la propiedad<span> </span><em><strong>TemporizadorHabilitado</strong><span> </span></em>del componente<span> </span><em><strong>Tiempo</strong></em>.</p>
+<p style="background: white; margin: 12.0pt 0cm 12.0pt 0cm;">También vamos a hacer que los sprite_zombi desaparezcan en el caso de que quede alguno en el escenario, para ello ponemos el valor falso.</p>
+<p style="background: white; margin: 12.0pt 0cm 12.0pt 0cm;"><img src="img23.png" /></p>
+<p>Pero atención, si queremos que el programa funcione correctamente la próxima vez, y ejecute el contenido de<span> </span><em><strong>cuando.Tiempo.Temporizador ejecutar</strong></em>, tendremos que poner el valor de esa propiedad como<span> </span><em><strong>cierto</strong><span> </span></em>en el procedimiento<span> </span><em><strong>Iniciar_juego. </strong></em>Además antes deberemos restablecer el número de segundos restantes a 30, su valor inicial. En caso de olvidarnos de dar a nuestro programa alguna de estas dos instrucciones, el juego se ejecutaría para siempre.</p>
+<p><img src="img21.png" /></p>
+<h3>Añadir un botón para empezar de nuevo</h3>
+<p>Bueno, casi está todo, pero no podemos olvidar incluir un botón “<em><strong>Reiniciar</strong></em>” para que el juego comience de nuevo una vez terminado.</p>
+<p><img src="img22.png" /></p>
+<p>Veremos que cuando iniciamos de nuevo el juego ya no aparecen los zombis, a pesar de que sí vuelve a tener el valor 5 la variable <em><strong>v_objetos_restantes</strong></em>. ¿Por qué?</p>
+<p>Bueno, lo que ocurre es hemos olvidado algo. En el procedimiento <em><strong>cuando.spritePelota.EnColisiónCon</strong></em><span> </span>hacemos desaparecer cada zombi cuando la pelota choca con él. Para que los objetos vuelvan a ser visibles al pulsar el botón<span> </span><em><strong>Reiniciar </strong></em>tendremos que poner este atributo como<span> </span><em><strong>cierto</strong><span> </span></em>de nuevo. Podemos incluir esta instrucción, por ejemplo, dentro el procedimiento<span> </span><em><strong>Colocar_zombis</strong><span> </span></em>. Vamos a hacer esto utilizando un bloque disponible dentro de los cajones de cada zombi. Usaremos el bloque verde oscuro que sirve para establecer el estado del atributo<span> </span><em><strong>Visible</strong></em>. Podemos hacer lo mismo para todos los zombis copiando el bloque del primero y cambiando el nombre del enemigo al que se refiere en cada caso.</p>
+<p><img src="atrapa20.jpg" width="824" height="230" alt="" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id11">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Actividad</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta11_41_2" class="block iDevice_content">
+<p>A partir de este punto cada uno puede mejorar el juego como mejor le parezca, pensando qué quiere que suceda en cada momento, e implementándolo en el programa. Se proponen algunas ideas:</p>
+<p style="margin-left: 30px;">● Como habrás observado, los zombis se paran al llegar al borde del escenario. Para que sigan moviéndose puedes utilizar el siguiente bloque:</p>
+<p style="margin-left: 30px;"><img src="img0.png" width="459" height="125" alt="" /><br />● Añadir una imagen de fondo más profesional<br />● Incluir un sonido cada vez que atrapamos un enemigo<br />● Poner un contador de puntos, de tal forma que cada vez que se atrape un enemigo se incremente el contador.</p>
+<p style="margin-left: 30px;"><img src="img1.1.png" width="518" height="196" alt="" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="34_adivinar_nmero.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="36_cuestionario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

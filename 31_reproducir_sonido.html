@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1. Reproducir sonido | appinventor </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Antonio Salido" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">appinventor</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">App Inventor</a></li>
+   <li><a href="1_instalacin.html" class="no-ch">1. Instalación</a></li>
+   <li><a href="2_entorno.html" class="no-ch">2. Entorno</a></li>
+   <li class="current-page-parent"><a href="3_proyectos.html" class="current-page-parent daddy">3. Proyectos</a>
+   <ul>
+      <li id="active"><a href="31_reproducir_sonido.html" class="active no-ch">3.1. Reproducir sonido</a></li>
+      <li><a href="32_xilfono.html" class="no-ch">3.2. Xilófono</a></li>
+      <li><a href="33_dibujar.html" class="no-ch">3.3. Dibujar</a></li>
+      <li><a href="34_adivinar_nmero.html" class="no-ch">3.4. Adivinar número</a></li>
+      <li><a href="35_atrapa_objetos.html" class="no-ch">3.5. Atrapa objetos</a></li>
+      <li><a href="36_cuestionario.html" class="no-ch">3.6. Cuestionario</a></li>
+      <li><a href="37_traduvoz.html" class="no-ch">3.7. TraduVoz</a></li>
+      <li><a href="38_mapa_tour.html" class="no-ch">3.8. Mapa Tour</a></li>
+      <li><a href="39_app_turismo.html" class="no-ch">3.9. App turismo</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_proyectos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_xilfono.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1. Reproducir sonido</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_85" class="block iDevice_content">
+<p>Antes de nada, para este ejercicio necesitamos dos recursos que tenemos que descargar en nuestro ordenador:</p>
+<ul>
+<li><a href="https://drive.google.com/file/d/0BxbMLvaTHIWgcjYxTEhXYzF0SFE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Kitty.png</a></li>
+<li><a href="https://drive.google.com/file/d/0BxbMLvaTHIWgRjNJblFqNkxIVlE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Miau.mp3</a></li>
+</ul>
+<h2>Diseño</h2>
+<p>Para realizar el diseño tendremos que arrastrar desde la parte izquierda de la vista de diseño(Paleta) a la parte central de la pantalla los siguientes componentes:</p>
+<p>• Imagen (interfaz de usuario)<br />• Disposición horizontal(disposición)<br />• Dos componentes tipo botón(interfaz de usuario)<br />• Disposición vertical(disposición)<br />• Sonido(medios)</p>
+<p>Observa como el componente sonido aparece como no visible ya que realmente no afecta a la apariencia de la aplicación sino que permitirá reproducir sonidos. En este componente tendremos que "cargar" el fichero de audio a reproducir mediante la ventana de medios o directamente subiéndolo en su propiedad Origen.</p>
+<h3>Disposiciones</h3>
+<p>Por defecto, MIT App Inventor apila en la vista de diseño los componentes visuales que agregamos. En general, podemos afirmar que las disposiciones son elementos contenedores que permiten alinear otros componentes en pantalla; ya sea una disposición horizontal que los alinea teniendo como referencia el eje del mismo nombre o vertical, que los permitiría alinear conforme a la vertical de la pantalla del dispositivo.<br />Puede ocurrir también que entre dos componentes, como es el caso de nuestra aplicación de ejemplo con los botones, queramos introducir un determinado espaciado a modo de separación. Para este último caso, el uso de una disposición vertical u horizontal "separadora"(realmente no contiene otros componentes) también puede resultar de utilidad.</p>
+<p><img src="img5.png" />   <img src="img6.png" width="308" height="223" /></p>
+<p>Observa cómo podemos establecer el tamaño de las disposiciones haciéndolas partícipes del tamaño original de los elementos que contienen(automático), configurando un ancho o alto fijo en píxeles o en porcentajes u ocupando todo el área que nos permita el contenedor que la tenga.</p>
+<h3>Componente imagen</h3>
+<p>El componente imagen necesita que "subamos" el fichero a mostrar, en este caso, la imagen Kitty.png. Parra ello seleccionamos el componente Image1, en Propiedades, y bajo la propiedad<span> </span><em>Foto</em>, hacemos clic en Ninguno … Elegimos la opción Subir archivo… , y después Seleccionar archivo.</p>
+<p>El aspecto visual lo definiremos en la vista de diseño a través de sus propiedades. Ajustamos el alto y el ancho al contenedor.</p>
+<h3>Componente botón</h3>
+<p>Uno de los componentes más utilizados en las aplicaciones móviles son los botones. Podremos gestionar lo que ocurre cuando hagamos clic sobre él y otros cuantos eventos interesantes en la vista de bloques. El aspecto visual lo definiremos en la vista de diseño a través de sus propiedades.</p>
+<p>•<span> </span><strong>ColorDeFondo:</strong><span> </span>Color sólido del botón.<br />•<span> </span><strong>Habilitado</strong>: Por defecto el usuario puede usarlo si está marcado.<br />•<span> </span><strong>Negrita</strong>: El texto del botón aparecerá resaltado.<br />•<span> </span><strong>Cursiva</strong>: El texto del botón se mostrará en cursiva.<br />•<span> </span><strong>Tamaño de la letra</strong>: Número que especifica el tamaño en puntos de la fuente usada por el botón.<br />•<span> </span><strong>TipoDeLetra</strong>: Fuente utilizada por el texto.<br />•<span> </span><strong>Alto, Ancho</strong>: Dimensiones del botón especificadas mediante puntos fijos(píxeles) o porcentajes.<br />•<span> </span><strong>Imagen</strong>: Nos permite personalizar un botón con un icono o imagen.<br />•<span> </span><strong>Forma</strong>: Define el estilo del botón.<br />•<span> </span><strong>MostrarPulsación</strong>: Marcado distinguirá entre pulsado y sin pulsar.<br />•<span> </span><strong>Texto</strong>: Mensaje que aparecerá escrito sobre el botón.<br />•<span> </span><strong>PosiciónDelTexto</strong>: Alineación respecto al eje horizontal.<br />•<span> </span><strong>ColorDelTexto</strong>: Color sólido de la fuente.<br />•<span> </span><strong>Visible</strong>: Marcado indica que se mostrará en pantalla.</p>
+<p>Para quitar el texto “<em><strong>Texto para el Botón1</strong></em>” que aparece en el botón hay que borrar el valor de la propiedad<span> </span><em><strong>Texto del botón</strong></em>, en la parte derecha de la ventana. Ponemos como valor<span> </span><strong>Maullar. </strong>Repetimos la operación con<span> </span><strong>Boton2</strong>, poniendo como valor de texto<span> </span><strong>Salir</strong>.</p>
+<p>Modificar las propiedades para personalizar los botones (color de fondo, tipo de letra, etc.).</p>
+<h3>Componente sonido</h3>
+<p>Este componente multimedia nos permitirá reproducir ficheros de audio de corta duración e incluso hacer que el dispositivo móvil vibre. Si el audio resulta ser una melodía o canción tendremos que utilizar el componente Reproductor.<br />Los formatos de sonido soportados son los estándares que reproduzca el dispositivo Android siendo WAV o MP3 los más utilizados. Para reproducirlos previamente tendremos que cargar los ficheros a nuestra aplicación e indicarlo en su propiedad Origen.</p>
+<p>Ahora añadiremos un sonido a nuestra aplicación, seleccionamos el componente <em><strong>Sonido.<span> </span></strong></em>Hacemos clic sobre el valor de la propiedad<span> </span><em><strong>Origen </strong></em>y subiremos el archivo descargado <strong></strong><em><strong>“Miau.pm3”</strong></em></p>
+<h2>Programación en MIT App Inventor</h2>
+<p>Una vez realizado el diseño de nuestra aplicación tendremos que gestionar lo que ocurre con la misma. Para ello cambiaremos la interfaz de la plataforma a la pantalla de bloques.<br />MIT App Inventor, como otros lenguajes de programación visuales, utiliza un sistema de bloques o "fichas de puzle" que nos permiten programar lo que ocurre cuando interactuamos con la aplicación.<br />Existen una serie de bloques clasificados por colores denominados integrados que podremos utilizar en cualquier momento y un conjunto de bloques que dependerán de los componentes que hayamos incluido en nuestra aplicación.<br />Controlar lo que ocurre en nuestra aplicación es una tarea bastante sencilla. Cada componente introducido tiene una serie de eventos asociados que arrastrándolos al área de principal de la pantalla nos permitirán conectar con otros bloques que definirán el comportamiento de la app.</p>
+<p>Hacemos clic en el botón<span> </span><em><strong>Bloques</strong></em><span> </span>situado en la esquina superior derecha. Para nuestra primera aplicación de ejemplo los bloques necesarios son los siguientes:</p>
+<p><img src="gato3.jpg" alt="" width="663" height="147" /></p>
+<p><img src="img5.1.png" width="417" height="198" /></p>
+<p>La interpretación que podemos hacer de los mismos es la siguiente:<br />&lt;&lt; Cuando la pantalla principal se inicie estableceremos como origen el fichero de audio miau.mp3 en el componente Sonido1. En cualquier momento de la ejecución de nuestra app si el usuario hace clic sobre el Botón1 se reproducirá el audio cargado en el componte Sonido1 y si hace clic sobre el Botón2 se cerrará la aplicación. &gt;&gt;<br />Observa que:</p>
+<p>• Inicializar es un evento de Screen1 y en general de cualquier "pantalla".<br />• Los eventos Clic son propios de los componentes tipo botón.<br />• Desde la vista de bloques podemos también establecer propiedades en tiempo<br />de ejecución que se podrían configurar en la vista diseño.<br />• Podemos hacer uso de los bloques integrados para tareas de control como cerrar<br />la aplicación o poner un campo de texto.</p>
+<h3>Ahora a vibrar</h3>
+<p>Podemos mejorar la aplicación, haciendo que el teléfono vibre a la vez que el gato maúlla. Una pista: hay que buscar dentro del cajón de bloques del objeto<span> </span><em><strong>Sonido1</strong><span> </span></em>.<br />El bloque que hace que el móvil vibre es<span> </span><em><strong>Llamar.Sonido1.Vibrar</strong></em>. Este bloque, a diferencia del anterior, tiene un “encajador” por el lado derecho. Sirve para indicar cuánto tiempo tiene que vibrar el dispositivo, en milisegundos.Para poner aquí un valor de tiempo hay que abrir el cajón<span> </span><em><strong>Matemáticas</strong><span> </span></em>y arrastrar el bloque de arriba hasta el encajador libre a la derecha del bloque<br /><em><strong>Llamar.Sonido1.Vibrar</strong></em>, donde indica<span> </span><em><strong>milisegundos</strong><span> </span></em>.</p>
+<p><img src="gato5.jpg" alt="" width="422" height="146" /></p>
+<p>Ahora cambiamos el valor 0 por el valor 500, para que vibre durante medio segundo. Los bloques quedarán así:</p>
+<p><img src="gato6.jpg" alt="" width="285" height="110" /></p>
+<h2>MIT AI2 Companion</h2>
+<p>Suponiendo que estamos desarrollando en la misma red en la cual está el dispositivo móvil conectado mediante WIFI, podemos enlazar ambos utilizando MIT AI2 Companion. Para ello desde el menú de App Inventor generaremos un código QR que podremos teclear o escanear. Este código será de un sólo uso y habilitará el "desarrollo en vivo", esto es, que mientras estamos viendo la aplicación en el dispositivo real cualquier cambio en MIT App Inventor se verá reflejado en el terminal.</p>
+<h2>Guardar el proyecto</h2>
+<p>MIT App Inventor almacenará nuestro proyecto de manera automática en la nube sin que tengamos que preocuparnos de nada; sin embargo, puede ser conveniente por diversos motivos disponer de una copia del mismo. Para conseguir esto, la plataforma nos permite generar un fichero en formato AIA que más tarde podríamos volver a cargar en la plataforma bien en nuestro perfil de usuario o en otro. Este fichero, que no es más que un archivo ZIP con la extensión cambiada, contiene toda la estructura de nuestro proyecto incluyendo los distintos ficheros que hayamos incorporado.</p>
+<h2>Instalar la aplicación</h2>
+<p>Una vez concluido el proceso de creación de la app si deseamos instalarla de manera permanente en un dispositivo tendremos que generar y descargarnos un fichero en formato APK. Dicho formato es el estándar utilizado por cualquier aplicación Android solo que en lugar de descargarlo del mercado oficial lo haremos desde los servidores del MIT. Previo a este paso deberemos permitir a nuestro dispositivo la instalación de aplicaciones desde orígenes desconocidos (no oficiales). Esta opción se encuentra en<span> </span><em><strong>Ajustes / Seguridad.</strong></em></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id12">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Actividad</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta12_44_2" class="block iDevice_content">
+<p>Utilizando la opción de<span> </span><em><strong>Guardar como...</strong></em><span> </span>crea una nueva app a partir del proyecto actual con una imagen diferente, botones con fondos personalizados y otro fichero de sonido.</p>
+<p>Vamos a incluir dos componentes nuevo, el <span> </span><em><strong>Acelerómetro</strong></em>, que se encuentra en la Paleta<span> </span><em><strong>Sensores<span> </span></strong></em>y<span> </span><em><strong>TextoAvoz</strong><span> </span></em>de<span> </span><em><strong>Medios</strong><span> </span></em>. Ambos se quedarán bajo la ventana del visor, porque no se refieren a objetos visibles en nuestra interfaz de usuario.</p>
+<p><span>Con TextoAVoz vamos a hacer que al iniciar la aplicación el personaje o animal de nuestra aplicación se presente.</span></p>
+<p><img src="img2.png" width="452" height="118" /></p>
+<p><span>El acelerómetro es el sistema que detecta que el móvil se mueve, o cambia de orientación vertical a horizontal. Es muy útil para muchas aplicaciones.</span></p>
+<p>En el editor de bloques, elegiremos en la ventana de bloques el objeto <em><strong>Acelerómetro1</strong><span> </span></em>que hemos creado. De su cajón elegiremos el bloque mostaza <em><strong>cuando.Acelerómetro1.Agitar</strong></em></p>
+<p>Ahora copiamos el bloque<span> </span><em><strong>Llamar.Sonido1.Reproducir</strong></em><span> </span>de arriba, haciendo clic con el botón derecho sobre él y seleccionando<span> </span><em><strong>Duplicar</strong><span> </span></em>. Una vez duplicado lo encajaremos con el bloque mostaza que hemos creado. El editor de código aparecerá como en la siguiente figura.</p>
+<p><img src="http://localhost:51235/appinventor/resources/gato7.jpg" alt="" width="0" height="0" /><img src="gato7.jpg" alt="" width="289" height="71" /></p>
+<p>¿Qué va a ocurrir? El sonido se reproducirá cada vez que agitemos el móvil. </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_proyectos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_xilfono.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

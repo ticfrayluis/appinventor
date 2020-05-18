@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.7. TraduVoz | appinventor </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Antonio Salido" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">appinventor</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">App Inventor</a></li>
+   <li><a href="1_instalacin.html" class="no-ch">1. Instalación</a></li>
+   <li><a href="2_entorno.html" class="no-ch">2. Entorno</a></li>
+   <li class="current-page-parent"><a href="3_proyectos.html" class="current-page-parent daddy">3. Proyectos</a>
+   <ul>
+      <li><a href="31_reproducir_sonido.html" class="no-ch">3.1. Reproducir sonido</a></li>
+      <li><a href="32_xilfono.html" class="no-ch">3.2. Xilófono</a></li>
+      <li><a href="33_dibujar.html" class="no-ch">3.3. Dibujar</a></li>
+      <li><a href="34_adivinar_nmero.html" class="no-ch">3.4. Adivinar número</a></li>
+      <li><a href="35_atrapa_objetos.html" class="no-ch">3.5. Atrapa objetos</a></li>
+      <li><a href="36_cuestionario.html" class="no-ch">3.6. Cuestionario</a></li>
+      <li id="active"><a href="37_traduvoz.html" class="active no-ch">3.7. TraduVoz</a></li>
+      <li><a href="38_mapa_tour.html" class="no-ch">3.8. Mapa Tour</a></li>
+      <li><a href="39_app_turismo.html" class="no-ch">3.9. App turismo</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="36_cuestionario.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="38_mapa_tour.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.7. TraduVoz</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id17">
+<div class="iDevice emphasis0">
+<div id="ta17_85" class="block iDevice_content">
+<p>Otras de las grandes posibilidades de MIT App Inventor son los componentes<span> </span><strong><em>TextoAVoz</em></strong>,<span> </span><em><strong>ReconocimientoDeVoz</strong><span> </span></em>y<span> </span><strong><em>TraductorYandex</em></strong>. Utilizando la síntesis de voz de Google podemos crear una completa y funcional aplicación traductora en pocos minutos.</p>
+<p><iframe width="560" height="314" src="http://www.youtube.com/embed/VQoNMMUYmUs" allowfullscreen="allowfullscreen" class="external-iframe" data-mce-fragment="1"></iframe></p>
+<h2>Diseño de TraduVoz</h2>
+<p>Para el diseño de la aplicación vamos a utilizar los siguientes elementos:</p>
+<ul>
+<li>Disposición vertical, donde vamos a incluir una etiqueta y un botón.</li>
+<li>Disposición horizontal 1, con una etiqueta.</li>
+<li>Disposición horizontal 2, con dos botones.</li>
+<li>Disposición horizontal 3, con dos botones.</li>
+<li>Disposición horizontal 4, con una etiqueta.</li>
+<li>Del bloque Medios vamos a incluir<span> </span><em><strong>TextoAVoz</strong></em>,<span> </span><em><strong>ReconocimientoDeVoz</strong><span> </span></em>y<span> </span><em><strong>TraductorYandex</strong></em>.</li>
+</ul>
+<p>Configura las propiedades de los componentes para que la aplicación tenga el siguiente aspecto:</p>
+<p><img src="img5.2.png" /></p>
+<h2>Bloques de TraduVoz</h2>
+<p>Lo primero que va a hacer el usuario de la aplicación es pulsar el<span> </span><em><strong>BotónHablar</strong></em>, por lo tanto, tenemos que llamar a la función<span> </span><em><strong>"llamar ReconocimientoDeVoz.ObtenerTexto"</strong></em>.</p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img1.1.png" width="472" height="81" alt="" /><img src="img4.png" /></p>
+<p>Ahora vamos a hacer que la voz captada por el micrófono aparezca como texto en la etiqueta Et_TextoReconocido.</p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img2.2.png" width="646" height="111" alt="" /><img src="img6.1.png" /></p>
+<p>A continuación, vamos a programar los botones de las banderas poniendo el texto con el idioma correspondiente. Luego, hacemos una llamada al Traductor Yandex para que realice la traducción. Para cada idioma debemos configurar las siglas del idioma correctamente, así como el lenguaje al que traducir.</p>
+<p><span>Lista de códigos de países e idioma: </span></p>
+<p><span><a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank" rel="noopener">https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/</a></span></p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img3.1.png" width="745" height="196" alt="" /><img src="img8.2.png" /></p>
+<p>Por último, vamos a configurar el TraductorYandex. Este componente tiene dos elementos,<span> </span><em>códigoDeRespuesta</em><span> </span>que se utiliza para verificar si la traducción se ha realizado correctamente y<span> </span><em>traducción</em>. Nosotros vamos a utilizar este último elemento para poner la traducción en la etiqueta<span> </span><em>Et_TextoTraducido</em>. A continuación, vamos a llamar<span> </span><em>TextoAVoz</em><span> </span>para que sintetice la voz de la traducción.</p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img4.1.png" width="0" height="0" alt="" /><img src="img8.png" width="630" height="162" alt="" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id18">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Actividad</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta18_50_2" class="block iDevice_content">
+<ul>
+<li>Crea tu propia app traductora permitiendo al usuario traducir a 4 idiomas</li>
+<li>Modifica la aplicación para que nos permita la posibilidad de escribir en un campo de texto lo que se desea traducir.</li>
+<li>Cuidar la presentación de la aplicación personalizando fondo y botones, para darle un aspecto más profesional.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="36_cuestionario.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="38_mapa_tour.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

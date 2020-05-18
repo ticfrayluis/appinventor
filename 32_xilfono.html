@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2. Xilófono | appinventor </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Antonio Salido" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">appinventor</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">App Inventor</a></li>
+   <li><a href="1_instalacin.html" class="no-ch">1. Instalación</a></li>
+   <li><a href="2_entorno.html" class="no-ch">2. Entorno</a></li>
+   <li class="current-page-parent"><a href="3_proyectos.html" class="current-page-parent daddy">3. Proyectos</a>
+   <ul>
+      <li><a href="31_reproducir_sonido.html" class="no-ch">3.1. Reproducir sonido</a></li>
+      <li id="active"><a href="32_xilfono.html" class="active no-ch">3.2. Xilófono</a></li>
+      <li><a href="33_dibujar.html" class="no-ch">3.3. Dibujar</a></li>
+      <li><a href="34_adivinar_nmero.html" class="no-ch">3.4. Adivinar número</a></li>
+      <li><a href="35_atrapa_objetos.html" class="no-ch">3.5. Atrapa objetos</a></li>
+      <li><a href="36_cuestionario.html" class="no-ch">3.6. Cuestionario</a></li>
+      <li><a href="37_traduvoz.html" class="no-ch">3.7. TraduVoz</a></li>
+      <li><a href="38_mapa_tour.html" class="no-ch">3.8. Mapa Tour</a></li>
+      <li><a href="39_app_turismo.html" class="no-ch">3.9. App turismo</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31_reproducir_sonido.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33_dibujar.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2. Xilófono</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_85" class="block iDevice_content">
+<p>El xilófono es una aplicación muy sencilla que sirve para demostrar el uso de algunos de los componentes más básicos de App Inventor, así como para introducir el uso de los procedimientos como mecanismo para evitar la generación de código repetitivo.<br />La aplicación consiste en mostrar un conjunto de 8 botones de colores que responden a su pulsación mediante la emisión de una nota musical.</p>
+<p><strong>1. Crear un nuevo proyecto.</strong></p>
+<p><strong>2. Añadir una nota del xilófono</strong></p>
+<ul>
+<li>Desde la paleta de Interfaz de usuario, arrastra un Botón hasta la pantalla en el área del Visor.</li>
+<li>Renombra el botón a BotonDO pulsando el botón Cambiar nombre que se encuentra al pie del área de Componentes.</li>
+<li>Desde el área de Propiedades modifica el aspecto del botón: Ajusta el tamaño del botón modificando las propiedades de Ancho y Alto.</li>
+</ul>
+<p><strong>3. Creación de la interfaz completa.</strong> Añadir el resto de botones a la interfaz hasta obtener el aspecto final del xilófono. Separa los botones mediante disposicones horizontales.</p>
+<p><img src="xilofon1.jpg" alt="" width="335" height="291" /></p>
+<p><strong>4. Adición del componente de sonido</strong>. Descarga los archivos de sonido de este enlace<span> </span><a href="https://drive.google.com/drive/folders/0BxbMLvaTHIWgR00zbkc0WWVaOGc?usp=sharing" target="_blank" rel="noopener noreferrer">Recursos xilófono</a></p>
+<ul>
+<li>Selecciona la categoría<span> </span><em><strong>Medios</strong></em><span> </span>de la Paleta y arrastra el componente<span> </span><em><strong>Sonido</strong></em> al visor. Comprueba que aparece bajo la categoría de Componentes no visibles del Visor, ya que no tiene ningún tipo de representación gráfica en la interfaz.</li>
+<li>Pulsa ahora el botón<span> </span><em><strong>Subir archivo…</strong></em><span> </span>del área<span> </span><em>Medios</em>, para proceder a la carga de los distintos archivos de audio. Repite el proceso hasta completar la carga de los 8 ficheros<span> </span><em><strong>wav</strong></em><span> </span>necesarios.</li>
+</ul>
+<p><strong>5. Creación de un procedimiento para la creación de sonido.</strong></p>
+<ul>
+<li>Cambia el modo de edición pulsando el botón<span> </span><em><strong>Bloques</strong></em><span> </span>de la parte superior derecha de la pantalla. En este modo de definirá el comportamiento de los distintos elementos introducidos en la interfaz.</li>
+<li>Pulsa sobre la opción<span> </span><em><strong>Procedimientos</strong></em><span> </span>que encontrarás en el área de Bloques en la parte izquierda de la pantalla. De los bloques resultantes arrastra el primero hacia el visor y asígnale el nombre<span> </span><em><strong>reproducirNota</strong></em>.</li>
+</ul>
+<p><img src="xilofon2.jpg" alt="" width="583" height="218" /></p>
+<ul>
+<li>Pulsa ahora sobre la ruedecilla azul que hay junto al texto como para añadir un parámetro de entrada al procedimiento. Este parámetro indicará el número de nota a reproducir. Arrastra el bloque<span> </span><em><strong>entrada</strong></em><span> </span>de la parte izquierda hasta encajarlo dentro del etiquetado como entradas en la parte derecha, y asígnale como nombre numero.</li>
+</ul>
+<p><img src="xilofon3.jpg" alt="" width="306" height="164" /></p>
+<ul>
+<li>Completa ahora la funcionalidad del procedimiento tal y como se describe en la figura. Observa como consiste en obtener el nombre del fichero a reproducir como la mezcla del número de nota más la extensión ”.wav”, para utilizarlo como fuente del sonido. La última instrucción es la que realmente realiza la reproducción. Ten en cuenta que:</li>
+</ul>
+<p>• Los bloques<span> </span><em><strong>poner</strong></em><span> </span>y<span> </span><em><strong>llamar</strong></em><span> </span>pueden obtenerse pulsando sobre el componente<span> </span><em><strong>Sonido1</strong></em><span> </span>que se encuentran en la categoría<span> </span><em><strong>Screen1</strong></em>.<br />• Los bloques<span> </span><em><strong>unir</strong></em><span> </span>y<span> </span><em><strong>“”</strong></em>, pertenecen a la categoría<span> </span><em><strong>Texto</strong></em>.<br />• El bloque<span> </span><em><strong>tomar</strong></em><span> </span>se obtendrá pulsando sobre el componente<span> </span><em><strong>Sonido1</strong></em></p>
+<p><img src="xilofon4.jpg" alt="" width="569" height="124" /></p>
+<p></p>
+<p><strong>6. Asignación del sonido a los botones de notas.</strong></p>
+<ul>
+<li>Seleccionar un bloque de tipo<span> </span><em><strong>cuando .click</strong></em><span> </span>pulsando sobre el<span> </span><em><strong>BotonDO</strong></em><span> </span>y arrastrarlo al visor. Dentro de este bloque colocar otro de tipo <em><strong>llamar </strong></em><em><strong>reproducirNota</strong></em><span> </span>disponible en la categoría de<span> </span><em><strong>Procedimientos</strong></em>, para después conectar un bloque de tipo numérico en el hueco disponible, con el valor<span> </span><em><strong>1</strong></em>.</li>
+</ul>
+<p><img src="xilofon5.jpg" alt="" width="610" height="98" /></p>
+<ul>
+<li>Este proceso debe repetirse para cada uno de los 8 botones disponibles en la interfaz, teniendo en cuenta que el número de nota debe ser distinto en cada caso.</li>
+</ul>
+<p><strong>7. Inicialización de los sonidos.</strong></p>
+<ul>
+<li>La primera vez que se reproduce un sonido se produce una pequeña espera debido a que el fichero debe ser cargado en la memoria del dispositivo. Para evitarlo es posible en el instante inicial una precarga forzada de todos ellos. Esta operación es imperceptible para el usuario. Para ello, coloca un bloque de tipo <em><strong>cuando .Inicializar</strong></em><span> </span>disponible en la categoría<span> </span><em><strong>Screen1</strong></em>. Incluye dentro de este bloque los correspondientes a la asignación de la fuente del sonido, tal y como indica la figura.</li>
+</ul>
+<p><img src="xilofon6.jpg" alt="" width="451" height="257" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id13">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Actividad</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta13_45_2" class="block iDevice_content">
+<p><span>Indicar visualmente qué nota se está reproduciendo en cada momento cambiando la apariencia del botón correspondiente, por ejemplo, al pulsar el botón cambiar el color de fondo y al dejar de pulsar que recobre su color original.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31_reproducir_sonido.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33_dibujar.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

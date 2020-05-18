@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3. Dibujar | appinventor </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Antonio Salido" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">appinventor</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">App Inventor</a></li>
+   <li><a href="1_instalacin.html" class="no-ch">1. Instalación</a></li>
+   <li><a href="2_entorno.html" class="no-ch">2. Entorno</a></li>
+   <li class="current-page-parent"><a href="3_proyectos.html" class="current-page-parent daddy">3. Proyectos</a>
+   <ul>
+      <li><a href="31_reproducir_sonido.html" class="no-ch">3.1. Reproducir sonido</a></li>
+      <li><a href="32_xilfono.html" class="no-ch">3.2. Xilófono</a></li>
+      <li id="active"><a href="33_dibujar.html" class="active no-ch">3.3. Dibujar</a></li>
+      <li><a href="34_adivinar_nmero.html" class="no-ch">3.4. Adivinar número</a></li>
+      <li><a href="35_atrapa_objetos.html" class="no-ch">3.5. Atrapa objetos</a></li>
+      <li><a href="36_cuestionario.html" class="no-ch">3.6. Cuestionario</a></li>
+      <li><a href="37_traduvoz.html" class="no-ch">3.7. TraduVoz</a></li>
+      <li><a href="38_mapa_tour.html" class="no-ch">3.8. Mapa Tour</a></li>
+      <li><a href="39_app_turismo.html" class="no-ch">3.9. App turismo</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32_xilfono.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="34_adivinar_nmero.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3. Dibujar</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_85" class="block iDevice_content">
+<p>Esta app introduce el componente<span> </span><em><strong>Canvas </strong></em><span> </span>para crear gráficos sencillos de dos dimensiones (2D). Vas a construir un Paint, una aplicación que permite al<br />usuario dibujar en la pantalla en diferentes colores, y también le permitiera poner una imagen ya existente y dibujar el sobre ella.</p>
+<h2>Diseño de los componentes</h2>
+<p>Vamos a utilizar estos componentes para hacer la aplicación:</p>
+<ul>
+<li>Tres<span> </span><em>botones</em><span> </span>para seleccionar los componentes de pintura rojo, azul y verde. Y un componente<span> </span><em>DisposiciónHorizontal</em><span> </span>para organizarlos.</li>
+<li>Un componente<span> </span><em><strong>Deslizador</strong></em><span> </span>del bloque Interfaz de usuario. Nos permite modificar el valor numérico de un parámetro sin tener que escribirlo. Lo utilizaremos para fijar el grosor del pincel.</li>
+<li>Un componente<span> </span><em><strong>Canvas</strong></em>, que es la superficie de dibujo.</li>
+<li>Dos <em>botones</em>, uno para Guardar y otro para limpiar el dibujo. <span>Y un componente </span><em>DisposiciónHorizontal</em><span> para organizarlos.</span></li>
+<li><span>Un componente <em><strong>Etiqueta</strong></em>, que llamaremos <em><strong>Nombre_Archivo</strong></em>, a la derecha del botón <em><strong>Guardar</strong></em>,</span></li>
+</ul>
+<p><span><img src="dibujar3.jpg" alt="" width="234" height="79" /></span></p>
+<p>Una vez dentro, cambiaremos el nombre de la pantalla<span> </span><em><strong>Screen1</strong><span> </span></em>por<span> </span><em><strong>Dibujar</strong><span> </span></em>( en la propiedad<span> </span><em><strong>Título<span> </span></strong></em>del componente<span> </span><em><strong>Screen1</strong><span> </span></em>).</p>
+<p><span><em><strong>ATENCIÓN</strong></em></span><br /><span><em><strong>Es importante siempre utilizar nombres descriptivos para los objetos que vamos creando. Al principio, cuando nuestras aplicaciones son pequeñas, es fácil recordar cada objeto, pero a medida que los programas van haciéndose más complejos es fundamental saber para qué sirve cada objeto, cada variable, y sólo podremos hacerlo si le hemos dado un nombre que describe qué es o para qué sirve.</strong></em></span></p>
+<p>En el<span> </span><em><strong>Lienzo</strong></em><span> </span>vamos a definir que su anchura (propiedad<span> </span><em><strong>Ancho</strong></em>) sea automática, para que se extienda hasta los bordes izquierdo y derecho del Visor. En cuanto a su altura, mejor experimentar con diferentes tamaños hasta que ocupe el espacio que queremos.<br />El tamaño se especifica en pixels, es decir, en puntos de la pantalla. Cada línea de la pantalla tiene un número de pixels. El número de ellos que haya, en líneas y columnas, define la resolución de la pantalla. Podemos probar con 300 pixels, y modificarlo más tarde si vemos que no es el mejor tamaño.</p>
+<p><img src="dibujar4.jpg" alt="" width="364" height="117" /></p>
+<h2>Bloques</h2>
+<p>Ahora vamos a definir el comportamiento del programa, a decir cómo tiene que funcionar. Vamos entonces al editor de bloques.</p>
+<h3>Añadir el evento táctil para dibujar círculos</h3>
+<p>Arrastraremos el bloque<span> </span><em><strong>cuando.Lienzo1.Tocar</strong></em><span> </span>desde el cajón del objeto<span> </span><em><strong>Lienzo1</strong><span> </span></em>hasta el editor. Esto indica que cada vez que toquemos el lienzo con el dedo tendrá que ocurrir lo que digamos dentro de este bloque mostaza.</p>
+<p>Ahora arrastraremos el bloque morado (de acción)<em><strong><span> </span>llamar.Lienzo1.DibujarCírculo</strong></em> hasta encajarlo dentro del bloque mostaza. Observa que existen componentes para dibujar líneas, puntos, círculos, etc. Veremos que para funcionar necesita que le asociemos a la derecha tres bloques de información adicional (x, y, r).</p>
+<p><img src="dibujar5.jpg" alt="" width="408" height="204" /></p>
+<p>Vamos a utilizar el sistema de<span> </span><em>Coordenadas Cartesianas</em><span> </span>para referirnos a un punto cualquiera dentro de nuestro<span> </span><em><strong>Lienzo1</strong></em>. Siempre que toquemos con el dedo dentro del lienzo, el  bloque mostaza guardará cuál es el valor de la coordenada<span> </span><strong>x</strong><span> </span>y la coordenada<span> </span><strong>y</strong><span> </span>del punto que estamos tocando, porque seguro que lo necesitaremos. App Inventor utiliza el sistema cartesiano para determinar la posición de un punto determinado dentro de un lienzo. La x aumenta desde la izquierda a la derecha, y la y lo hace desde arriba hacia abajo.</p>
+<p><img src="dibujar6.jpg" alt="" width="260" height="249" /></p>
+<p>Precisamente para saber dónde dibujar el círculo, el bloque morado deberá saber que saber qué<span> </span><strong>x</strong><span> </span>e<span> </span><strong>y</strong><span> </span>tiene el punto de la pantalla que estamos tocando. Lo tomaremos del bloque mostaza.<br />Al dejar quieto el puntero del ratón sobre el icono de la<span> </span><strong>x</strong><span> </span>del bloque mostaza nos saldrá una ventanita en la que aparecerá un pequeño bloque<span> </span><em><strong>tomarx</strong></em><span> </span>de color naranja. Tenemos que arrastrarlo hasta encajarlo con el hueco superior del bloque morado <em><strong>llamar.Lienzo1.DibujarCírculo </strong></em></p>
+<p><span>Haremos lo mismo con la </span><strong>y</strong><span> . Esto hará que el círculo se dibuje sobre la </span><strong>x</strong><span> y la </span><strong>y</strong><span> que </span><span>estamos tocando, y no en cualquier otro punto de la pantalla.</span><br /><span>Nos falta definir el radio .</span><span> Para definir el tamaño del radio, abrir el cajón </span><em><strong>Matemáticas</strong> </em><span>de la </span><span>zona de bloques y arrastrar el bloque azul que indicar el valor 0 (cero) hasta el hueco <em><strong>radius </strong></em></span><span>de nuestro bloque morado.</span></p>
+<p><img src="dibujar7.jpg" alt="" width="421" height="201" /></p>
+<p>Queremos que los círculos se vean bien, así que le asignaremos a r el valor 10. El radio del círculo será 10.</p>
+<h3>Agregar controladores de eventos de botones</h3>
+<p>Ahora podemos tocar dentro del lienzo, en la pantalla del móvil o el emulador, para ver cómo se dibujan pequeños círculos. Pero para que los círculos sean rojos, verdes o azules en lugar de negros, hay que decirle al móvil que lo haga creando nuevos bloques. Hay que utilizar un bloque mostaza del objeto<span> </span><em><strong>botón_rojo</strong></em>. Ya hemos usado este tipo de bloque mostaza en el programa del gato.<br />Utilizaremos el bloque<span> </span><em><strong>cuando.boton_rojo.Clic.</strong></em><span> </span>Lo arrastramos hasta el editor de bloques. Y dentro colocamos el componente de Lienzo<em><strong>poner.Lienzo1.ColorDePintura.como.</strong></em> <br />Falta indicar que queremos que sea el color rojo. Para ello escogeremos el pequeño bloque que identifica a este color de entre los colores que hay en el cajón<span> </span><strong>Colores</strong><span> </span>de la Paleta de App Inventor.</p>
+<p><img src="dibujar8.jpg" alt="" width="442" height="74" /></p>
+<p>Haremos lo mismo con los botones para color verde y color azul. Lo mejor es hacerlo duplicando el bloque mostaza que hemos creado para el color rojo. Una vez hecho, en el nuevo bloque mostaza, podemos desplegar la lista del nombre de los botones y elegir el del color verde. Entonces sólo tendremos que cambiar el bloque rojo por el verde, y listo. Lo mismo con el botón para el azul.</p>
+<p>Cuando probemos el resultado se nos “ensuciará” el lienzo enseguida, así que hay que poner un botón para dejar el lienzo en blanco de nuevo. </p>
+<ul>
+<li>Crear<span> </span><em><strong>DisposiciónHorizontal1</strong><span> </span></em>debajo del lienzo</li>
+<li>Meter dentro un nuevo botón y llamarlo<span> </span><em><strong>Limpiar</strong></em></li>
+<li>Cambiar el texto del botón por “<em>Limpiar</em>”</li>
+<li>Poner los bloques para que al hacer clic sobre Limpiar se limpie el lienzo</li>
+</ul>
+<p><img src="dibujar9.jpg" width="280" height="76" /></p>
+<h2>Dibujar líneas</h2>
+<p>Para dibujar una línea hace falta especificar el punto inicial de la línea y el punto final. Por ello para usar este bloque hay que indicarle dos<br />coordenadas<span> </span><strong>x</strong><span> </span>y dos<span> </span><strong>y</strong>. El primer (x1, y1) define el punto inicial de la línea, y el segundo par (x2, y2) define el punto final de la misma. Al hacer clic sobre el lienzo, sin levantar el dedo, el programa guardará en su memoria el valor de la<span> </span><strong>x</strong><span> </span>e<span> </span><strong>y</strong><span> </span>del punto que hemos tocado (determinado por<span> </span><em><strong>XPrevio</strong><span> </span></em>e<span> </span><em><strong>YPrevio</strong></em>). Según vayamos deslizando el dedo el programa irá detectando el cambio de posición y dibujará una línea desde ese punto guardado hasta el punto que estamos tocando actualmente (determinado por<span> </span><em><strong>XActual </strong></em>e<span> </span><em><strong>YActual</strong></em>). Esto se repetirá todo el tiempo, muy rápidamente, mientras sigamos arrastrando el dedo por la pantalla. Se dibujarán por lo tanto muchas líneas muy cortas, una detrás de la otra, dando la sensación de ser una única línea continua.</p>
+<p><img src="dibujar_linea.jpg" width="614" height="200" /></p>
+<h3>Cambiar el tamaño del pincel con un Deslizador</h3>
+<p>Un objeto<span> </span><em><strong>Deslizador</strong><span> </span></em>es perfecto para modificar el valor numérico de un parámetro sintener que escribirlo. Para incluir un deslizador en nuestro interfaz de usuario tenemos que arrastrarlo desde la Paleta. En nuestro caso lo llamaremos<span> </span><em><strong>Tamaño_pincel</strong></em>.</p>
+<p><img src="dibujar_deslizador.jpg" width="652" height="232" /></p>
+<p>Tenemos que definir el<span> </span><em><strong>ValorMínimo</strong><strong><span> </span>(1)</strong></em><span> </span>y<span> </span><em><strong>ValorMáximo (10)</strong><span> </span></em>que podrá tomar el deslizador, y el valor que tendrá inicialmente, <em><strong>PosiciónDelPulgar</strong> (5</em>). También es conveniente especificar la anchura del Slider para que se ajuste al espacio restante (<em><strong>Ajustar al contenedor</strong></em>).</p>
+<p>Tenemos que indicarle ahora a nuestro programa que modifique el ancho de la línea de nuestro dibujo según variemos la posición de<span> </span><em><strong>Tamaño_pincel</strong></em>. Para ello, utilizaremos el bloque mostaza<span> </span><em><strong>cuando.Tamaño.pincel.PosiciónCambiada</strong><span> </span></em>, que se ejecuta cada vez que se cambia la posición del selector dentro del deslizador.</p>
+<p>Si dejamos momentáneamente el puntero del ratón sobre la casilla<span> </span><em><strong>posiciónDelPulgar</strong></em> del bloque mostaza, se mostrará un desplegable que nos permitirá elegir el bloque que define el valor de esa variable (<em><strong>tomar</strong><span> </span></em>, o definir un nuevo valor para ella (<em><strong>poner</strong><span> </span></em>. Elegiremos en este caso el bloque<span> </span><em><strong>tomar</strong><span> </span></em>, y lo combinaremos con el bloque verde del objeto Lienzo que define el ancho de línea de dibujo, para indicar al programa que cambie el ancho de la línea cada vez que arrastremos el puntero del deslizador <em><strong>Tamaño_pincel</strong><span> </span></em>a un nueva posición.</p>
+<p><img src="dibujar_linea_ancho.jpg" width="612" height="100" /></p>
+<h2>Guardar un archivo con el dibujo que hemos hecho</h2>
+<p>Cuando el usuario termine de hacer un dibujo interesante, seguramente querrá conservarlo en la memoria permanente del teléfono. Para ofrecerle esa posibilidad, tendremos que indicarle a nuestro programa cómo almacenar en la memoria el contenido actual del lienzo. En primer lugar, hay que incluir en el interfaz un botón <em><strong>Guardar</strong><span> </span></em>, que al ser pulsado ejecutará el código correspondiente.</p>
+<p><img src="dibujar_guardar.jpg" width="367" height="141" /></p>
+<p>El bloque de código que usaremos, incluido dentro del cajón Lienzo, será <em><strong>llamar.Lienzo1.Guardar.</strong></em></p>
+<p>Este bloque es diferente a los vistos hasta ahora, porque no puede ser encajado directamente debajo de otro bloque, o dentro de un bloque color mostaza. El bloque tiene que ser encajado a otro por su izquierda. Esto se debe a que es un bloque que devuelve un valor, como acabamos de ver al final del apartado anterior, con el bloque de color verde claro<span> </span><em><strong>Lienzo1.AnchoDeLínea.</strong></em><span> </span>En este caso el bloque violeta devuelve una texto, que contiene el nombre del archivo donde se ha almacenado el dibujo dentro de la memoria del dispositivo.<br />Es conveniente colocar un componente Etiqueta, que llamaremos<span> </span><em><strong>Nombre_Archivo</strong></em>, a la derecha del botón<span> </span><em><strong>Guardar</strong></em>, y que tomará el valor de texto devuelto por el procedimiento<span> </span><em><strong>Lienzo1.Guardar</strong></em>. Definiremos que su propiedad<span> </span><em><strong>Texto</strong></em>estéinicialmente en blanco. El componente será difícil de ver en el dispositivo mientras no le asignemos un nuevo valor.</p>
+<p><img src="dibujar_guardar1.jpg" width="608" height="75" /></p>
+<p>Cada vez que se pulse el botón<span> </span><em><strong>Guardar</strong><span> </span></em>, el dibujo quedará almacenado con un nombre que se asignará automáticamente, en función del día y la hora. Este nombre aparecerá en el texto de la etiqueta<span> </span><em><strong>Nombre_archivo</strong></em><span> </span>cada vez que hagamos clic en el botón <em><strong>Guardar</strong></em><span> </span>.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id14">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Actividad</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta14_46_2" class="block iDevice_content">
+<ol>
+<li>Personaliza el lienzo con una imagen de fondo.</li>
+<li>Realiza los cambios oportunos para almacenar el dibujo en un fichero con el nombre que nosotros le asignemos. Debes añadir un<span> </span><em><strong>CampoDeTexto</strong></em>.</li>
+<li>Imagina que deseamos conseguir una tonalidad de color rojo determinada. ¿Cómo la podemos poner sabiendo su código de color RGB en App Inventor? Haz la prueba construyendo un color rojo personalizado.</li>
+<li>Incorpora un nuevo botón que utilizando el componente<span> </span><em><strong>Cámara<span> </span></strong></em> (bloque Medios) permita tomar una foto con el dispositivo móvil y establecerla como fondo del lienzo.Al pulsar el botón Limpiar debe aparecer la imagen que tienes por defecto en el lienzo.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32_xilfono.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="34_adivinar_nmero.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

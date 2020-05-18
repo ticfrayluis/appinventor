@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.8. Mapa Tour | appinventor </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Antonio Salido" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">appinventor</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">App Inventor</a></li>
+   <li><a href="1_instalacin.html" class="no-ch">1. Instalación</a></li>
+   <li><a href="2_entorno.html" class="no-ch">2. Entorno</a></li>
+   <li class="current-page-parent"><a href="3_proyectos.html" class="current-page-parent daddy">3. Proyectos</a>
+   <ul>
+      <li><a href="31_reproducir_sonido.html" class="no-ch">3.1. Reproducir sonido</a></li>
+      <li><a href="32_xilfono.html" class="no-ch">3.2. Xilófono</a></li>
+      <li><a href="33_dibujar.html" class="no-ch">3.3. Dibujar</a></li>
+      <li><a href="34_adivinar_nmero.html" class="no-ch">3.4. Adivinar número</a></li>
+      <li><a href="35_atrapa_objetos.html" class="no-ch">3.5. Atrapa objetos</a></li>
+      <li><a href="36_cuestionario.html" class="no-ch">3.6. Cuestionario</a></li>
+      <li><a href="37_traduvoz.html" class="no-ch">3.7. TraduVoz</a></li>
+      <li id="active"><a href="38_mapa_tour.html" class="active no-ch">3.8. Mapa Tour</a></li>
+      <li><a href="39_app_turismo.html" class="no-ch">3.9. App turismo</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="37_traduvoz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="39_app_turismo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.8. Mapa Tour</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_85" class="block iDevice_content">
+<p>La creación de una aplicación con un mapa completo puede parecer muy complicado, pero App Inventor 2  permite utilizar el componente <em><strong>ActivityStarter </strong></em>con Google Maps para las ubicaciones virtuales que facilitan mucho el trabajo. En primer lugar, construirás una aplicación que muestra vistas de las Casas Colgadas, puente San Pablo y plaza Mayor de Cuenca con un solo clic. A continuación, podrás modificar la aplicación para crear una visita virtual de mapas de satélite de otros monumentos disponibles a partir de Google Maps.</p>
+<p>Este tema presenta los siguientes componentes:</p>
+<ul>
+<li>El componente <em><strong>ActivityStarter </strong></em>que permite la ejecución de otras aplicaciones de Android desde su aplicación. Vamos a utilizar este componente para lanzar Google Maps con diferentes parámetros.</li>
+<li><span style="color: #333333; font-size: 1.05em;">El componente </span><em style="color: #333333; font-size: 1.05em;"><strong>SelectorDeLista</strong> </em><span style="color: #333333; font-size: 1.05em;">para permitir al usuario elegir de una lista de ubicaciones.</span></li>
+</ul>
+<h3>Diseño</h3>
+<p>Para el diseño de la aplicación vamos a utilizar los siguientes elementos:</p>
+<ul>
+<li>Una imagen para personalizar el fondo de la aplicación.</li>
+<li>Del bloque <em>Interfaz de usuario</em> vamos a utilizar el componente <em><strong>SelectorDeLista</strong></em>. Este componente tiene un botón asociado, cuando el usuario hace clic en él se despliega la lista de elecciones. Cambia el texto de este botón ajustando la propiedad Texto a "Elije el destino”.</li>
+<li>Del bloque <em>Conectividad</em>  vamos a incluir <em><strong>ActivityStarter</strong></em>, componente no visible.</li>
+</ul>
+<p><img src="img7.png" /></p>
+<h3>Definir las propiedades de ActivityStarter</h3>
+<p>ActivityStarter es un componente que te permite lanzar cualquier aplicación de Android, un navegador, Google Maps, o incluso otra de tus propias aplicaciones.<br />Vamos a construir la app <em><strong>Tour_Cuenca</strong></em> donde la aplicación Google Maps se lanzará para mostrar mapas particulares basadas en la elección del usuario. El usuario puede pulsar el botón Atrás de su móvil para volver a la aplicación y elegir un destino diferente.<br />ActivityStarter es un componente relativamente de bajo nivel en el que deberás establecer algunas propiedades. Vamos a  definir las propiedades que se especifican en la Tabla, y ten cuidado, incluso las letras mayúsculas / minúsculas son importantes.</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Propiedad</strong></td>
+<td><strong>Valor</strong></td>
+</tr>
+<tr>
+<td>Acción</td>
+<td>android.intent.action.VIEW</td>
+</tr>
+<tr>
+<td>Clase</td>
+<td>com.google.android.maps.MapsActivity</td>
+</tr>
+<tr>
+<td>Paquete</td>
+<td>com.google.android.apps.maps</td>
+</tr>
+</tbody>
+</table>
+<h2><img src="img7.2.png" /></h2>
+<h2> Bloques</h2>
+<p>En el Editor de Bloques, deberemos definir una lista de destinos y dos comportamientos:</p>
+<ul>
+<li>Cuando la aplicación se inicia, la aplicación carga los destinos al componente<span> <strong><em>SelectorDeLista</em></strong> </span>para que el usuario pueda elegir uno.</li>
+<li>Cuando el usuario selecciona un destino del<span> <strong><em>SelectorDeLista</em></strong> </span>, la aplicación Maps se inicia y muestra un mapa de este destino.</li>
+</ul>
+<h3>Creación de una lista de destinos</h3>
+<p>Abre el Editor de Bloques y crea una variable con la lista de los destinos de Cuenca utilizando los bloques que figuran a continuación:</p>
+<p><img src="img7.3.png" /></p>
+<p><em><strong>Screen1.Inicializar</strong></em><span> </span>se activa cuando la aplicación se inicia. Como se muestra en la siguiente imagen, el controlador de eventos establece la propiedad Elementos de<span> <em>SelectoDeLista1</em>  </span>con los tres destinos que aparecerán.</p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img2.4.png" width="594" height="73" alt="" /><img src="img7.1.png" /></p>
+<h3>Encontrar el DataUri de mapas específicos</h3>
+<p>El primer paso es abrir Google Maps en su ordenador para encontrar los mapas específicos que desea lanzar para cada destino:</p>
+<ol>
+<li>Abrir <a href="https://www.google.com/maps" target="_blank" rel="noopener">https://www.google.com/maps</a></li>
+<li>Búsqueda de un punto de referencia (por ejemplo, las Casas Colgadas).</li>
+<li>Elegir el tipo de vista que deseas (por ejemplo, Dirección, satélite, o Street View). Nosotros vamos a seleccionar la opción StreetView. Una vez realizada la búsqueda del lugar cogemos el muñeco amarillo de la parte inferior derecha de la pantalla y lo colocamos en uno de los puntos azules que aparecen en el mapa, seleccionando aquel que nos muestre una mejor vista del sitio. </li>
+</ol>
+<p style="padding-left: 30px;"><img src="img8.3.png" /></p>
+<p style="padding-left: 30px;">5. Hacer clic en <strong>Compartir o insertar el mapa</strong> y copiar la URL.</p>
+<p style="padding-left: 30px;"><img src="img9.2.png" /></p>
+<p style="padding-left: 30px;"><img src="img10.1.png" /></p>
+<p>Vamos a utilizar esta URL para mostrar el mapa desde la aplicación. En la siguiente lista se muestran las URL que usaremos:</p>
+<ul>
+<li>Casas Colgadas: https://goo.gl/maps/Ae7qhbECFinwg4sz8</li>
+<li>Puente San Pablo: https://goo.gl/maps/5miAmhsFeeT8PTL97</li>
+<li>Plaza Mayor: https://goo.gl/maps/jUPYAmo3wocKHyjJ9</li>
+</ul>
+<p>Necesitaremos una lista llamada<span> </span><em><strong>dataURIs</strong></em>, que contiene una DataURI para cada mapa que deseamos mostrar. Crear esta lista, como se muestra en la imagen para que los elementos que se corresponden a los elementos de la lista de destinos (es decir, la primera<span> </span><em><strong>dataURI</strong></em><span> </span>debe corresponder al primer destino, la Torre Eiffel).</p>
+<p><img src="img10.2.png" /></p>
+<h3>Configurar el comportamiento de SelectorDeLista</h3>
+<p>Cuando el usuario elige un elemento de  <em><strong>SelectorDeLista</strong></em>, el evento  se activa. El controlador de eventos utiliza esto para encontrar la posición del elemento seleccionado, o el valor del índice, en la lista de destinos.</p>
+<p>Por lo tanto, vamos a crear una variable llamada index y la vamos a iniciar con valor 0. Así que, si se elige la primera opción "Casas Colgadas", el índice será 1, si "Puente San Pablo" es elegido, será 2, y si se elige la "Plaza Mayor ", el índice será 3.</p>
+<p><img src="https://aulavirtual.castillalamancha.es/Curso_1718/pluginfile.php/730418/mod_imscp/content/4/img4.3.png" width="0" height="0" alt="" /><img src="img5.3.png" width="934" height="241" alt="" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id20">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Actividad</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta20_52_2" class="block iDevice_content">
+<ol>
+<li>Añadir cuatro nuevos monumentos de la provincia a la aplicación.</li>
+<li>Personaliza la aplicación con una imagen representativa de Cuenca. Puedes incluir alguna etiqueta para incluir algún eslogan sobre el turismo en Cuenca.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="37_traduvoz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="39_app_turismo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
